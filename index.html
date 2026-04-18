@@ -1229,7 +1229,7 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
         <h2>⚙ Panel de Administración</h2>
         <span>OtoServiMedic · Editor de contenido</span>
       </div>
-      <button id="admin-close">✕</button>
+      <button id="admin-close" title="Cerrar y ocultar panel">🔒 Ocultar</button>
     </div>
 
     <!-- Tabs -->
@@ -1651,7 +1651,15 @@ document.getElementById('admin-toggle').onclick = () => {
   document.getElementById('admin-overlay').classList.add('open');
 };
 document.getElementById('admin-close').onclick = () => {
+  // Close the panel
   document.getElementById('admin-overlay').classList.remove('open');
+  // Hide the toggle button completely until next unlock
+  const btn = document.getElementById('admin-toggle');
+  btn.style.cssText = 'display:none !important; opacity:0; pointer-events:none;';
+  adminUnlocked = false;
+  // Show goodbye toast
+  const t = document.getElementById('adm-toast');
+  if(t){ t.textContent = '🔒 Panel cerrado y oculto'; t.style.opacity = '1'; setTimeout(() => t.style.opacity = '0', 2000); }
 };
 document.getElementById('admin-overlay').onclick = (e) => {
   if (e.target === document.getElementById('admin-overlay'))
@@ -2059,16 +2067,125 @@ function updateSocial(key) {
   toast(`✅ ${key.toUpperCase()} actualizado: ${handle}`);
 }
 
-// ── ACCESO SECRETO AL PANEL ─────────────────────────────────
-// Método 1: teclado → Ctrl + Shift + A
+// ── ACCESO SECRETO AL PANEL CON CONTRASEÑA ──────────────────
 let adminUnlocked = false;
+
+// Password modal styles
+const pmStyle = document.createElement('style');
+pmStyle.textContent = `
+  #pw-modal-bg {
+    display:none; position:fixed; inset:0; z-index:99997;
+    background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);
+    align-items:center; justify-content:center;
+  }
+  #pw-modal-bg.open { display:flex; }
+  #pw-modal {
+    background:white; border-radius:20px; padding:32px 28px;
+    width:320px; box-shadow:0 20px 60px rgba(0,0,0,0.3);
+    font-family:'Poppins',sans-serif; text-align:center;
+  }
+  #pw-modal h3 { font-size:18px; font-weight:700; color:#1B2B6B; margin-bottom:6px; }
+  #pw-modal p  { font-size:13px; color:#64748B; margin-bottom:20px; }
+  #pw-input {
+    width:100%; padding:12px 16px; border:2px solid #E8EDF5;
+    border-radius:10px; font-size:16px; text-align:center;
+    letter-spacing:3px; outline:none; font-family:'Poppins',sans-serif;
+    transition:border-color .2s;
+  }
+  #pw-input:focus { border-color:#00BCD4; }
+  #pw-input.error { border-color:#ef4444; animation:shake .3s; }
+  #pw-btn {
+    width:100%; margin-top:12px; background:#1B2B6B; color:white;
+    border:none; border-radius:10px; padding:12px;
+    font-family:'Poppins',sans-serif; font-size:14px; font-weight:700;
+    cursor:pointer; transition:background .2s;
+  }
+  #pw-btn:hover { background:#00BCD4; color:#1B2B6B; }
+  #pw-cancel { font-size:12px; color:#64748B; margin-top:10px; cursor:pointer; display:block; }
+  #pw-cancel:hover { color:#1B2B6B; }
+  #pw-error { font-size:12px; color:#ef4444; margin-top:8px; display:none; }
+  @keyframes shake {
+    0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)}
+  }
+`;
+document.head.appendChild(pmStyle);
+
+// Create password modal
+const pmBg = document.createElement('div');
+pmBg.id = 'pw-modal-bg';
+pmBg.innerHTML = `
+  <div id="pw-modal">
+    <div style="font-size:36px;margin-bottom:10px;">🔐</div>
+    <h3>Acceso Administrador</h3>
+    <p>Ingresa la contraseña para acceder al panel de OtoServiMedic</p>
+    <input type="password" id="pw-input" placeholder="••••••••" maxlength="20"/>
+    <div id="pw-error">Contraseña incorrecta. Intenta de nuevo.</div>
+    <button id="pw-btn" onclick="checkPassword()">Ingresar</button>
+    <span id="pw-cancel" onclick="closePwModal()">Cancelar</span>
+  </div>
+`;
+document.body.appendChild(pmBg);
+
+// Allow Enter key in password field
 document.addEventListener('keydown', (e) => {
-  if (e.ctrlKey && e.shiftKey && e.key === 'A') {
-    toggleAdminAccess();
+  if (document.getElementById('pw-modal-bg').classList.contains('open')) {
+    if (e.key === 'Enter') checkPassword();
+    if (e.key === 'Escape') closePwModal();
   }
 });
 
-// Método 2: clic 3 veces rápido en el footer copyright
+function openPwModal() {
+  document.getElementById('pw-modal-bg').classList.add('open');
+  document.getElementById('pw-input').value = '';
+  document.getElementById('pw-error').style.display = 'none';
+  document.getElementById('pw-input').classList.remove('error');
+  setTimeout(() => document.getElementById('pw-input').focus(), 100);
+}
+
+function closePwModal() {
+  document.getElementById('pw-modal-bg').classList.remove('open');
+}
+
+function checkPassword() {
+  // ══ CAMBIA ESTA CONTRASEÑA POR LA QUE QUIERAS ══
+  const ADMIN_PASSWORD = 'OtoServiMedic2026';
+  // ════════════════════════════════════════════════
+  const input = document.getElementById('pw-input').value;
+  if (input === ADMIN_PASSWORD) {
+    closePwModal();
+    unlockAdmin();
+  } else {
+    const inp = document.getElementById('pw-input');
+    inp.classList.add('error');
+    document.getElementById('pw-error').style.display = 'block';
+    inp.value = '';
+    setTimeout(() => inp.classList.remove('error'), 400);
+  }
+}
+
+function unlockAdmin() {
+  const btn = document.getElementById('admin-toggle');
+  btn.style.cssText = 'display:flex !important; opacity:1; pointer-events:all; position:fixed; bottom:28px; right:28px; z-index:9999; width:52px; height:52px; border-radius:50%; background:#1B2B6B; color:white; border:3px solid #00BCD4; font-size:22px; cursor:pointer; box-shadow:0 4px 20px rgba(27,43,107,0.4); align-items:center; justify-content:center;';
+  adminUnlocked = true;
+  const t = document.getElementById('adm-toast');
+  if(t){ t.textContent = '🔓 Panel desbloqueado'; t.style.opacity = '1'; setTimeout(() => t.style.opacity = '0', 2500); }
+  // Auto-open panel
+  document.getElementById('admin-overlay').classList.add('open');
+}
+
+// Método 1: Ctrl + Shift + A → pide contraseña
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+    if (!adminUnlocked) openPwModal();
+    else {
+      // Already unlocked - toggle panel
+      const overlay = document.getElementById('admin-overlay');
+      overlay.classList.toggle('open');
+    }
+  }
+});
+
+// Método 2: 5 clics en el footer → pide contraseña
 let footerClicks = 0, footerTimer = null;
 document.addEventListener('DOMContentLoaded', () => {
   const footer = document.querySelector('footer');
@@ -2076,32 +2193,14 @@ document.addEventListener('DOMContentLoaded', () => {
     footer.addEventListener('click', () => {
       footerClicks++;
       clearTimeout(footerTimer);
-      footerTimer = setTimeout(() => { footerClicks = 0; }, 1000);
-      if (footerClicks >= 3) {
+      footerTimer = setTimeout(() => { footerClicks = 0; }, 1500);
+      if (footerClicks >= 5) {
         footerClicks = 0;
-        toggleAdminAccess();
+        if (!adminUnlocked) openPwModal();
       }
     });
   }
 });
-
-function toggleAdminAccess() {
-  const btn = document.getElementById('admin-toggle');
-  if (!adminUnlocked) {
-    // Show the button
-    btn.style.cssText = 'display:flex !important; opacity:1; pointer-events:all; position:fixed; bottom:28px; right:28px; z-index:9999; width:52px; height:52px; border-radius:50%; background:#2A3A8F; color:white; border:3px solid #4EC5D8; font-size:22px; cursor:pointer; box-shadow:0 4px 20px rgba(42,58,143,0.4); align-items:center; justify-content:center; transition:transform .2s, background .2s;';
-    adminUnlocked = true;
-    // Show mini toast
-    const t = document.getElementById('adm-toast');
-    t.textContent = '🔓 Panel desbloqueado'; t.style.opacity = '1';
-    setTimeout(() => t.style.opacity = '0', 2000);
-  } else {
-    // Hide again
-    btn.style.cssText = 'display:none !important; opacity:0; pointer-events:none;';
-    document.getElementById('admin-overlay').classList.remove('open');
-    adminUnlocked = false;
-  }
-}
 
 // Init photo preview on load
 window.addEventListener('load', () => {
