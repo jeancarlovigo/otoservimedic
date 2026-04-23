@@ -313,14 +313,20 @@ nav{
 .team-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(27,43,107,0.1);}
 .team-card-top{
   background:linear-gradient(135deg,var(--navy),#2563C6);
-  padding:32px 24px 24px;text-align:center;
+  padding:0;text-align:center;
 }
 .team-avatar{
-  width:80px;height:80px;border-radius:50%;
-  background:rgba(0,188,212,0.2);border:3px solid var(--cyan);
+  width:100%;
+  aspect-ratio:4/3;
+  background:rgba(0,188,212,0.2);
   display:flex;align-items:center;justify-content:center;
-  margin:0 auto 14px;
-  font-family:'Poppins',sans-serif;font-size:24px;font-weight:800;color:var(--cyan);
+  font-family:'Poppins',sans-serif;font-size:48px;font-weight:800;color:var(--cyan);
+  object-fit:cover;
+  background-size:cover;
+  background-position:center;
+}
+.team-card-info{
+  padding:20px 24px;
 }
 .team-card-top h3{font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;color:white;margin-bottom:4px;}
 .team-card-top .role{font-size:12px;color:var(--cyan);}
@@ -606,7 +612,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
           <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--navy)"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
         </a>
       </div>
-      <a href="https://wa.me/51930756294" class="btn-nav" id="nav-cta-wa">Agendar cita</a>
+      <a href="https://wa.me/51930756294?text=¡Hola%2C%20quisiera%20atenderme%20en%20OtoServiMedic!%20Me%20brinda%20más%20información" class="btn-nav" id="nav-cta-wa">Agendar cita</a>
     </div>
   </div>
 </nav>
@@ -628,7 +634,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
           <div class="price-info">Consulta +<br>Lavado oído</div>
         </div>
         <div class="hero-ctas">
-          <a href="https://wa.me/51930756294" class="btn-primary">Reservar cita ahora</a>
+          <a href="https://wa.me/51930756294?text=¡Hola%2C%20quisiera%20atenderme%20en%20OtoServiMedic!%20Me%20brinda%20más%20información" class="btn-primary">Reservar cita ahora</a>
           <a href="#servicios" class="btn-secondary">Ver servicios</a>
         </div>
       </div>
@@ -641,9 +647,9 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
       <div class="hero-slide-content">
         <div class="hero-eyebrow"><span class="dot"></span>Especialistas certificados</div>
         <h1>¿Carraspera o <em>dolor de garganta</em> frecuente?</h1>
-        <p class="hero-desc">Diagnóstico y tratamiento de laringitis, faringitis, disfonía y alteraciones de la voz. Consulta + diagnóstico por solo S/75.</p>
+        <p class="hero-desc">Diagnóstico y tratamiento de laringitis, faringitis, disfonía y alteraciones de la voz. Consulta + diagnóstico especializado.</p>
         <div class="hero-ctas">
-          <a href="https://wa.me/51930756294" class="btn-primary">Consultar ahora</a>
+          <a href="https://wa.me/51930756294?text=¡Hola%2C%20quisiera%20atenderme%20en%20OtoServiMedic!%20Me%20brinda%20más%20información" class="btn-primary">Consultar ahora</a>
           <a href="#procedimientos" class="btn-secondary">Procedimientos</a>
         </div>
       </div>
@@ -658,7 +664,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
         <h1>¿Sientes <em>mareos o vértigos</em> constantes?</h1>
         <p class="hero-desc">Prueba vestibular y diagnóstico de vértigo posicional. Tratamiento especializado con los mejores equipos en Pueblo Libre.</p>
         <div class="hero-ctas">
-          <a href="https://wa.me/51930756294" class="btn-primary">Agendar evaluación</a>
+          <a href="https://wa.me/51930756294?text=¡Hola%2C%20quisiera%20atenderme%20en%20OtoServiMedic!%20Me%20brinda%20más%20información" class="btn-primary">Agendar evaluación</a>
           <a href="#nosotros" class="btn-secondary">Conócenos</a>
         </div>
       </div>
@@ -690,7 +696,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
   <div class="container">
     <div class="sec-eyebrow">Nuestros servicios</div>
     <h2 class="sec-title">Atención especializada en ORL</h2>
-    <p class="sec-sub">Identifica tu síntoma y agenda con el especialista indicado. Atención desde S/75 en Pueblo Libre.</p>
+    <p class="sec-sub">Identifica tu síntoma y agenda con el especialista indicado. Atención personalizada en Pueblo Libre.</p>
     <div class="services-grid">
 
       <div class="svc-card">
@@ -699,7 +705,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
         </div>
         <h3>Otología</h3>
         <p>Evalúa y trata enfermedades que afectan el oído: otitis, zumbidos, pérdida auditiva y oído tapado.</p>
-        <div class="svc-price">Consulta + Lavado S/89</div>
+        
       </div>
 
       <div class="svc-card">
@@ -708,7 +714,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
         </div>
         <h3>Rinología</h3>
         <p>Diagnóstico y tratamiento de rinitis, sinusitis, desviación de tabique y sangrados nasales.</p>
-        <div class="svc-price">Consulta S/75</div>
+        
       </div>
 
       <div class="svc-card">
@@ -717,7 +723,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
         </div>
         <h3>Laringología</h3>
         <p>Diagnóstico y tratamiento de disfonía, laringitis, nódulos vocales y patologías de garganta.</p>
-        <div class="svc-price">Consulta S/75</div>
+        
       </div>
 
       <div class="svc-card">
@@ -726,7 +732,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
         </div>
         <h3>Otoneurología</h3>
         <p>Evalúa y trata síntomas como mareos, vértigo, inestabilidad y náuseas de origen ótico.</p>
-        <div class="svc-price">Consulta S/75</div>
+        
       </div>
 
     </div>
@@ -761,7 +767,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
           </div>
           <div class="val-row">
             <div class="val-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div><h4>Atención para toda la familia</h4><p>Consultas para adultos y niños. Diagnóstico oportuno, trato humano y precios accesibles desde S/75.</p></div>
+            <div><h4>Atención para toda la familia</h4><p>Consultas para adultos y niños. Diagnóstico oportuno, trato humano y atención de calidad.</p></div>
           </div>
         </div>
       </div>
@@ -826,34 +832,22 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
     <div class="sec-eyebrow">Especialistas</div>
     <h2 class="sec-title">Nuestro equipo médico</h2>
     <p class="sec-sub">Profesionales comprometidos con tu bienestar, liderados por especialistas certificados.</p>
-    <div class="team-grid" style="grid-template-columns:repeat(3,1fr);">
+    <div class="team-grid" style="grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
       <div class="team-card">
         <div class="team-card-top">
           <div class="team-avatar">GR</div>
-          <h3>Dra. Gleni Rojas Rafael</h3>
-          <div class="role">Otorrinolaringóloga</div>
-          <div class="team-badges">
-            <span class="team-badge">CMP 75063</span>
-            <span class="team-badge">RNE 40413</span>
+          <div class="team-card-info">
+            <h3>Dra. Gleni Rojas Rafael</h3>
+            <div class="role">Otorrinolaringóloga</div>
+            <div class="team-badges">
+              <span class="team-badge">CMP 75063</span>
+              <span class="team-badge">RNE 40413</span>
+            </div>
           </div>
         </div>
         <div class="team-card-body">
           <p>Médico otorrinolaringóloga colegiada y habilitada. Especialista en diagnóstico y tratamiento de patologías del oído, nariz y garganta, con amplia experiencia en procedimientos en consultorio.</p>
         </div>
-      </div>
-      <div class="team-card-placeholder">
-        <div style="width:60px;height:60px;border-radius:50%;background:var(--light);display:flex;align-items:center;justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
-        </div>
-        <h4>Personal de Atención</h4>
-        <p>Nuestro equipo de soporte garantiza una experiencia cálida y eficiente para cada paciente.</p>
-      </div>
-      <div class="team-card-placeholder" style="background:var(--navy);border:none;">
-        <div style="width:48px;height:48px;border-radius:50%;background:rgba(0,188,212,0.15);border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <h4 style="color:white;">Av. Brasil 2730</h4>
-        <p style="color:rgba(255,255,255,0.6);">Consultorio 1518, Pueblo Libre · Lima<br><br>📞 930 756 294</p>
       </div>
     </div>
   </div>
@@ -896,7 +890,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
       <div class="test-card">
         <div class="test-quote">"</div>
         <div class="stars">★★★★★</div>
-        <p class="test-text">Semanas con carraspera y voz ronca sin mejoría. La Dra. Gleni me diagnosticó correctamente. El precio de S/75 es muy accesible. Totalmente recomendada.</p>
+        <p class="test-text">Semanas con carraspera y voz ronca sin mejoría. La Dra. Gleni me diagnosticó correctamente. La atención es muy accesible. Totalmente recomendada.</p>
         <div class="test-author">
           <div class="test-av">AC</div>
           <div><div class="test-name">Ana C.</div><div class="test-svc">Laringología · Lima</div><span class="test-hl">Alteración de voz</span></div>
@@ -978,7 +972,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
         <div class="contact-social" style="margin-top:24px;">
           <a id="contact-fb" href="https://www.facebook.com/otoservimedic" target="_blank" class="social-btn social-fb"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
           <a id="contact-ig" href="https://www.instagram.com/otoservimedic" target="_blank" class="social-btn social-ig"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Instagram</a>
-          <a id="contact-wa" href="https://wa.me/51930756294" target="_blank" class="social-btn social-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>WhatsApp</a>
+          <a id="contact-wa" href="https://wa.me/51930756294?text=¡Hola%2C%20quisiera%20atenderme%20en%20OtoServiMedic!%20Me%20brinda%20más%20información" target="_blank" class="social-btn social-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>WhatsApp</a>
           <a id="contact-tt" href="https://www.tiktok.com/@otoservimedic" target="_blank" class="social-btn social-tt" style="display:none;">TikTok</a>
           <a id="contact-yt" href="https://www.youtube.com/@otoservimedic" target="_blank" class="social-btn social-yt" style="display:none;">YouTube</a>
         </div>
@@ -995,9 +989,9 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
           <label>Motivo de consulta</label>
           <select id="cf-motivo">
             <option value="">Selecciona tu síntoma o servicio...</option>
-            <option>Oído tapado / Zumbidos → Consulta + Lavado S/89</option>
-            <option>Carraspera / Dolor de garganta → S/75</option>
-            <option>Mareos / Vértigos → S/75</option>
+            <option>Oído tapado / Zumbidos → Consulta + Lavado S/120</option>
+            <option>Carraspera / Dolor de garganta → Consulta S/80</option>
+            <option>Mareos / Vértigos → Consulta S/80</option>
             <option>Rinitis / Sinusitis / Sangrado nasal</option>
             <option>Alteraciones en la voz</option>
             <option>Audiometría / Timpanometría</option>
@@ -1010,7 +1004,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
         <div class="form-group"><label>Mensaje (opcional)</label><textarea id="cf-mensaje" placeholder="Describe brevemente tus síntomas..."></textarea></div>
         <div id="cf-status" style="display:none;padding:12px 16px;border-radius:10px;font-size:14px;font-weight:600;margin-bottom:12px;text-align:center;"></div>
         <button class="btn-submit" type="button" id="cf-btn" onclick="enviarFormulario()">Enviar solicitud de cita</button>
-        <a href="https://wa.me/51930756294" class="btn-wa" id="footer-wa-link">
+        <a href="https://wa.me/51930756294?text=¡Hola%2C%20quisiera%20atenderme%20en%20OtoServiMedic!%20Me%20brinda%20más%20información" class="btn-wa" id="footer-wa-link">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
           <span id="footer-wa-num">Escribir por WhatsApp · 930 756 294</span>
         </a>
@@ -1064,7 +1058,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
           </div>
         </div>
 
-        <a href="https://wa.me/51930756294" target="_blank"
+        <a href="https://wa.me/51930756294?text=¡Hola%2C%20quisiera%20atenderme%20en%20OtoServiMedic!%20Me%20brinda%20más%20información" target="_blank"
            style="display:flex;align-items:center;justify-content:center;gap:10px;
                   background:#25D366;color:white;text-decoration:none;
                   font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;
@@ -1094,7 +1088,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
       <!-- Google Maps embed -->
       <div style="border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(27,43,107,0.12);min-height:420px;border:1px solid var(--border);">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.4891234567!2d-77.0567!3d-12.0789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8e5b7f6a5a5%3A0x0!2sAv.+Brasil+2730%2C+Pueblo+Libre+15084!5e0!3m2!1ses!2spe!4v1234567890"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.4014774795746!2d-77.06458818822098!3d-12.084644242560147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9e3f4dbf917%3A0x9e534795612e1991!2sOtoservimedic%20%7C%20Centro%20de%20Otorrinolaringolog%C3%ADa%20en%20Lima!5e0!3m2!1ses!2spe!4v1776928768257!5m2!1ses!2spe"
           width="100%"
           height="100%"
           style="border:0;min-height:420px;display:block;"
@@ -1136,7 +1130,7 @@ footer{background:#0D1B3E;padding:48px 0 24px;}
         <div class="footer-socials" style="margin-top:16px;">
           <a href="https://www.facebook.com/otoservimedic" id="footer-fb-link" target="_blank" class="footer-social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
           <a href="https://www.instagram.com/otoservimedic" id="footer-ig-link" target="_blank" class="footer-social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="white" stroke="none"/></svg></a>
-          <a href="https://wa.me/51930756294" target="_blank" class="footer-social-btn" style="background:#25D366;"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://wa.me/51930756294?text=¡Hola%2C%20quisiera%20atenderme%20en%20OtoServiMedic!%20Me%20brinda%20más%20información" target="_blank" class="footer-social-btn" style="background:#25D366;"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
           <a href="https://www.tiktok.com/@otoservimedic" id="footer-tt-link" target="_blank" class="footer-social-btn" style="display:none;"><svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.77 0 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.13 6.33 6.34 6.34 0 0 0 12.67 0V8.69a8.17 8.17 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg></a>
           <a href="https://www.youtube.com/@otoservimedic" id="footer-yt-link" target="_blank" class="footer-social-btn" style="display:none;background:#FF0000;"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#FF0000"/></svg></a>
         </div>
@@ -1184,9 +1178,10 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
 </script>
 
 <!-- ════════════════════════════════════════════════════════
-     PANEL DE ADMINISTRACIÓN OTOSERVIMEDIC
-     Acceso: presiona el botón flotante ⚙ (esquina inferior derecha)
-════════════════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════════════
+     PANEL DE ADMINISTRACIÓN MEJORADO - OtoServiMedic
+     Acceso: Ctrl+Shift+A o clic 3 veces en el footer
+════════════════════════════════════════════════════════════════════ -->
 <style>
 /* ── Admin toggle button ── */
 #admin-toggle {
@@ -1194,9 +1189,10 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
   width: 52px; height: 52px; border-radius: 50%;
   background: #2A3A8F; color: white; border: 3px solid #4EC5D8;
   font-size: 22px; cursor: pointer; box-shadow: 0 4px 20px rgba(42,58,143,0.4);
-  display: flex; align-items: center; justify-content: center;
+  display: none; align-items: center; justify-content: center;
   transition: transform .2s, background .2s;
 }
+#admin-toggle.visible { display: flex; }
 #admin-toggle:hover { transform: scale(1.1) rotate(30deg); background: #4EC5D8; color: #2A3A8F; }
 
 /* ── Admin overlay ── */
@@ -1277,6 +1273,7 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
   box-shadow: 0 4px 20px rgba(42,58,143,0.3); opacity: 0;
   transition: opacity .3s; pointer-events: none; border-left: 4px solid #4EC5D8;
 }
+.adm-toast.show { opacity: 1; }
 .adm-toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f4f8; }
 .adm-toggle-row:last-child { border-bottom: none; }
 .adm-toggle-label { font-size: 13px; color: #374151; }
@@ -1293,40 +1290,131 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
 }
 .adm-switch input:checked + .adm-slider { background: #4EC5D8; }
 .adm-switch input:checked + .adm-slider::before { transform: translateX(18px); }
-.adm-img-preview { width: 100%; aspect-ratio: 16/9; border-radius: 8px; object-fit: cover; margin-top: 8px; border: 2px solid #e2e8f0; }
-.adm-tag { display: inline-block; background: #E3F6FA; color: #2A3A8F; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 10px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
 
-/* ── Named grid classes for inline-styled sections ── */
-@media (max-width: 900px) {
-  .team-grid { grid-template-columns: 1fr 1fr !important; }
-  .gallery-row-3 { grid-template-columns: 1fr 1fr 1fr !important; }
-  .gallery-row-4 { grid-template-columns: 1fr 1fr !important; }
-  .proc-row-2 { grid-template-columns: 1fr 1fr 1fr !important; }
+/* ── Precios dinámicos ── */
+.price-list { display: flex; flex-direction: column; gap: 8px; }
+.price-item {
+  background: white; border: 1.5px solid #e2e8f0; border-radius: 8px;
+  padding: 10px 12px; transition: all .2s;
 }
-@media (max-width: 600px) {
-  .team-grid { grid-template-columns: 1fr !important; }
-  .gallery-row-3 { grid-template-columns: 1fr 1fr !important; }
-  .gallery-row-4 { grid-template-columns: 1fr 1fr !important; }
-  .proc-row-2 { grid-template-columns: 1fr 1fr !important; }
-  /* Fix hero card contact row on small screens */
-  .contact-row { flex-direction: column !important; }
-  /* Fix footer social row */
-  #footer-social-row { gap: 8px !important; flex-wrap: wrap !important; }
-  /* Ensure sections have proper side padding */
-  .section, .about, .services, .procedures, .testimonials, .contact, .stats { padding-left: 16px !important; padding-right: 16px !important; }
+.price-item:hover { border-color: #4EC5D8; }
+.price-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 8px;
 }
-@media (max-width: 380px) {
-  .team-grid { grid-template-columns: 1fr !important; }
-  .gallery-row-3 { grid-template-columns: 1fr 1fr !important; }
+.price-title {
+  flex: 1; font-size: 13px; font-weight: 600; color: #2A3A8F;
+  font-family: 'Montserrat', sans-serif;
+}
+.price-title input {
+  width: 100%; border: none; background: transparent;
+  font-size: 13px; font-weight: 600; color: #2A3A8F;
+  font-family: 'Montserrat', sans-serif; outline: none;
+  padding: 2px 4px; border-radius: 4px;
+}
+.price-title input:focus { background: #f0f4f8; }
+.price-actions {
+  display: flex; gap: 4px;
+}
+.btn-icon-small {
+  width: 24px; height: 24px; border-radius: 4px;
+  border: none; cursor: pointer; font-size: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: #f0f4f8; transition: all .2s;
+}
+.btn-icon-small:hover { transform: scale(1.1); }
+.btn-icon-small.danger { color: #dc2626; }
+.btn-icon-small.danger:hover { background: #fee2e2; }
+.price-fields {
+  display: grid; grid-template-columns: 2fr 1fr; gap: 8px;
+  align-items: center;
+}
+.price-value {
+  font-size: 16px; font-weight: 700; color: #2A3A8F;
+  font-family: 'Montserrat', sans-serif;
+}
+.price-value input {
+  width: 100%; border: 1.5px solid #e2e8f0; background: white;
+  font-size: 14px; font-weight: 700; color: #2A3A8F;
+  font-family: 'Montserrat', sans-serif; padding: 6px 10px;
+  border-radius: 6px; text-align: right; outline: none;
+}
+.price-value input:focus {
+  border-color: #4EC5D8; box-shadow: 0 0 0 3px rgba(78,197,216,0.15);
+}
+
+/* ── Galería fotos ── */
+.photo-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  margin-top: 12px;
+}
+.photo-item {
+  position: relative; background: white;
+  border: 2px solid #e2e8f0; border-radius: 8px;
+  overflow: hidden; cursor: move; transition: all .2s;
+  aspect-ratio: 1;
+}
+.photo-item:hover {
+  border-color: #4EC5D8; transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(78,197,216,0.2);
+}
+.photo-item.dragging { opacity: 0.5; transform: rotate(2deg); }
+.photo-img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.photo-overlay {
+  position: absolute; inset: 0;
+  background: rgba(42,58,143,0.9);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .2s;
+}
+.photo-item:hover .photo-overlay { opacity: 1; }
+.photo-overlay button {
+  padding: 6px 12px; border: none; border-radius: 6px;
+  font-size: 11px; font-weight: 700; cursor: pointer;
+  background: #fee2e2; color: #dc2626;
+  font-family: 'Montserrat', sans-serif;
+}
+.photo-order {
+  position: absolute; top: 4px; left: 4px;
+  background: #2A3A8F; color: white;
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.upload-area {
+  border: 2px dashed #e2e8f0; border-radius: 10px;
+  padding: 30px 16px; text-align: center;
+  background: white; cursor: pointer; transition: all .2s;
+}
+.upload-area:hover {
+  border-color: #4EC5D8; background: #f0f9ff;
+}
+.upload-area.dragover {
+  border-color: #4EC5D8; background: #e0f2fe;
+  transform: scale(1.02);
+}
+.upload-icon { font-size: 36px; margin-bottom: 8px; }
+.upload-text {
+  font-size: 13px; color: #374151;
+  font-weight: 600; margin-bottom: 4px;
+}
+.upload-subtext { font-size: 11px; color: #9CA3AF; }
+
+@media (max-width: 480px) {
+  #admin-panel { width: 100%; border-radius: 0; max-height: 100vh; }
+  .adm-row { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 
-<!-- Admin toggle: OCULTO - activar con Ctrl+Shift+A o clic 3x en el footer -->
-<button id="admin-toggle" title="Panel de administración"
-  style="display:none !important; opacity:0; pointer-events:none; position:fixed; bottom:28px; right:28px; z-index:9999; width:52px; height:52px; border-radius:50%; background:#2A3A8F; color:white; border:3px solid #4EC5D8; font-size:22px; cursor:pointer; box-shadow:0 4px 20px rgba(42,58,143,0.4); align-items:center; justify-content:center;">⚙</button>
-
 <!-- Toast notification -->
 <div class="adm-toast" id="adm-toast">✓ Cambio guardado</div>
+
+<!-- Admin toggle button -->
+<button id="admin-toggle" title="Panel de administración">⚙</button>
 
 <!-- Overlay + Panel -->
 <div id="admin-overlay">
@@ -1336,91 +1424,54 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
         <h2>⚙ Panel de Administración</h2>
         <span>OtoServiMedic · Editor de contenido</span>
       </div>
-      <button id="admin-close" title="Cerrar y ocultar panel">🔒 Ocultar</button>
+      <button id="admin-close" title="Cerrar panel">🔒 Ocultar</button>
     </div>
 
     <!-- Tabs -->
     <div class="adm-tabs">
-      <button class="adm-tab active" data-tab="precios">💰 Precios</button>
-      <button class="adm-tab" data-tab="info">📋 Info</button>
-      <button class="adm-tab" data-tab="fotos">🖼 Fotos</button>
-      <button class="adm-tab" data-tab="textos">✏ Textos</button>
-      <button class="adm-tab" data-tab="visib">👁 Visib.</button>
-      <button class="adm-tab" data-tab="redes">📱 Redes</button>
+      <button class="adm-tab active" data-tab="precios">💰 PRECIOS</button>
+      <button class="adm-tab" data-tab="equipo">👨‍⚕️ EQUIPO</button>
+      <button class="adm-tab" data-tab="info">📋 INFO</button>
+      <button class="adm-tab" data-tab="fotos">🖼 FOTOS</button>
+      <button class="adm-tab" data-tab="textos">✏ TEXTOS</button>
+      <button class="adm-tab" data-tab="redes">📱 REDES</button>
     </div>
 
     <div class="adm-content">
 
-      <!-- ── TAB PRECIOS ── -->
+      <!-- ══════════════════════════════════════
+           TAB 1: PRECIOS
+      ══════════════════════════════════════ -->
       <div class="adm-section active" id="tab-precios">
         <div class="adm-card">
-          <div class="adm-card-title">💊 Consulta + Diagnóstico</div>
-          <div class="adm-row">
-            <div class="adm-group">
-              <label class="adm-label">Precio (S/)</label>
-              <input class="adm-input" id="price-consulta" type="number" value="75" min="0"/>
-            </div>
-            <div class="adm-group">
-              <label class="adm-label">Mostrar precio</label>
-              <label class="adm-switch" style="margin-top:8px;">
-                <input type="checkbox" id="show-price-consulta" checked/>
-                <span class="adm-slider"></span>
-              </label>
-            </div>
+          <div class="adm-card-title" style="display:flex; justify-content:space-between; align-items:center;">
+            <span>📊 Lista de Precios</span>
+            <button class="adm-btn secondary" onclick="addNewPrice()" style="width:auto; padding:6px 12px; font-size:11px; margin:0;">+ Agregar</button>
           </div>
-          <div class="adm-group">
-            <label class="adm-label">Etiqueta del servicio</label>
-            <input class="adm-input" id="label-consulta" type="text" value="Consulta + Diagnóstico"/>
+          <div id="prices-container" class="price-list">
+            <!-- Los precios se cargarán dinámicamente aquí -->
           </div>
-          <button class="adm-btn" onclick="updatePrice('consulta')">Actualizar</button>
-        </div>
-
-        <div class="adm-card">
-          <div class="adm-card-title">👂 Consulta + Lavado de Oído</div>
-          <div class="adm-row">
-            <div class="adm-group">
-              <label class="adm-label">Precio (S/)</label>
-              <input class="adm-input" id="price-lavado" type="number" value="89" min="0"/>
-            </div>
-            <div class="adm-group">
-              <label class="adm-label">Mostrar precio</label>
-              <label class="adm-switch" style="margin-top:8px;">
-                <input type="checkbox" id="show-price-lavado" checked/>
-                <span class="adm-slider"></span>
-              </label>
-            </div>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Etiqueta del servicio</label>
-            <input class="adm-input" id="label-lavado" type="text" value="Consulta + Lavado"/>
-          </div>
-          <button class="adm-btn" onclick="updatePrice('lavado')">Actualizar</button>
-        </div>
-
-        <div class="adm-card">
-          <div class="adm-card-title">➕ Agregar precio personalizado</div>
-          <div class="adm-group">
-            <label class="adm-label">Nombre del servicio</label>
-            <input class="adm-input" id="new-svc-name" type="text" placeholder="Ej: Audiometría"/>
-          </div>
-          <div class="adm-row">
-            <div class="adm-group">
-              <label class="adm-label">Precio (S/)</label>
-              <input class="adm-input" id="new-svc-price" type="number" placeholder="0"/>
-            </div>
-            <div class="adm-group">
-              <label class="adm-label">Categoría</label>
-              <select class="adm-select" id="new-svc-cat">
-                <option>Oído</option><option>Nariz</option>
-                <option>Garganta</option><option>Procedimiento</option>
-              </select>
-            </div>
-          </div>
-          <button class="adm-btn secondary" onclick="addNewService()">+ Agregar servicio</button>
         </div>
       </div>
 
-      <!-- ── TAB INFO ── -->
+      <!-- ══════════════════════════════════════
+           TAB 2: EQUIPO MÉDICO
+      ══════════════════════════════════════ -->
+      <div class="adm-section" id="tab-equipo">
+        <div class="adm-card">
+          <div class="adm-card-title" style="display:flex; justify-content:space-between; align-items:center;">
+            <span>👨‍⚕️ Equipo Médico</span>
+            <button class="adm-btn secondary" onclick="addDoctor()" style="width:auto; padding:6px 12px; font-size:11px; margin:0;">+ Agregar Doctor</button>
+          </div>
+          <div id="doctors-container" class="price-list">
+            <!-- Los doctores se cargarán dinámicamente aquí -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           TAB 3: INFO
+      ══════════════════════════════════════ -->
       <div class="adm-section" id="tab-info">
         <div class="adm-card">
           <div class="adm-card-title">📍 Datos de contacto</div>
@@ -1434,943 +1485,826 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
           </div>
           <div class="adm-group">
             <label class="adm-label">Distrito / Ciudad</label>
-            <input class="adm-input" id="edit-city" type="text" value="Pueblo Libre, Lima, Perú"/>
+            <input class="adm-input" id="edit-city" type="text" value="Pueblo Libre, Lima"/>
           </div>
           <div class="adm-group">
-            <label class="adm-label">Facebook</label>
-            <input class="adm-input" id="edit-fb" type="text" value="facebook.com/otoservimedic"/>
+            <label class="adm-label">Email</label>
+            <input class="adm-input" id="edit-email" type="email" value="contacto@otoservimedic.com"/>
           </div>
-          <button class="adm-btn" onclick="updateContactInfo()">Guardar contacto</button>
+          <button class="adm-btn" onclick="updateContactInfo()">Guardar Contacto</button>
         </div>
 
         <div class="adm-card">
-          <div class="adm-card-title">🩺 Especialista principal</div>
+          <div class="adm-card-title">⏰ Horarios</div>
           <div class="adm-group">
-            <label class="adm-label">Nombre completo</label>
-            <input class="adm-input" id="edit-drname" type="text" value="Dra. Gleni Rojas Rafael"/>
+            <label class="adm-label">Lunes a Viernes</label>
+            <input class="adm-input" id="edit-schedule-weekday" type="text" value="9:00 AM - 7:00 PM"/>
           </div>
           <div class="adm-group">
-            <label class="adm-label">Credenciales (CMP · RNE)</label>
-            <input class="adm-input" id="edit-drcred" type="text" value="Otorrinolaringóloga · CMP 75063 · RNE 40413"/>
+            <label class="adm-label">Sábados</label>
+            <input class="adm-input" id="edit-schedule-sat" type="text" value="9:00 AM - 2:00 PM"/>
           </div>
-          <button class="adm-btn" onclick="updateDoctorInfo()">Guardar especialista</button>
+          <div class="adm-group">
+            <label class="adm-label">Domingos</label>
+            <input class="adm-input" id="edit-schedule-sun" type="text" value="Cerrado"/>
+          </div>
+          <button class="adm-btn" onclick="updateSchedule()">Actualizar Horarios</button>
         </div>
 
         <div class="adm-card">
-          <div class="adm-card-title">⭐ Estadísticas del hero</div>
+          <div class="adm-card-title">📊 Estadísticas (Barra azul)</div>
           <div class="adm-row">
             <div class="adm-group">
               <label class="adm-label">Pacientes</label>
-              <input class="adm-input" id="stat-patients" type="text" value="+5K"/>
+              <input class="adm-input" id="stat-pacientes" type="text" value="+5K"/>
             </div>
             <div class="adm-group">
               <label class="adm-label">Precio consulta</label>
-              <input class="adm-input" id="stat-price" type="text" value="s/75"/>
+              <input class="adm-input" id="stat-precio" type="text" value="s/75"/>
             </div>
+          </div>
+          <div class="adm-row">
             <div class="adm-group">
               <label class="adm-label">Procedimientos</label>
-              <input class="adm-input" id="stat-procs" type="text" value="+10"/>
+              <input class="adm-input" id="stat-procedimientos" type="text" value="+10"/>
             </div>
             <div class="adm-group">
               <label class="adm-label">Certificación</label>
-              <input class="adm-input" id="stat-cert" type="text" value="100%"/>
+              <input class="adm-input" id="stat-certificacion" type="text" value="100%"/>
             </div>
           </div>
-          <button class="adm-btn" onclick="updateStats()">Actualizar estadísticas</button>
+          <button class="adm-btn" onclick="updateStats()">Actualizar Estadísticas</button>
         </div>
       </div>
 
-      <!-- ── TAB FOTOS ── -->
+      <!-- ══════════════════════════════════════
+           TAB 4: FOTOS
+      ══════════════════════════════════════ -->
       <div class="adm-section" id="tab-fotos">
         <div class="adm-card">
-          <div class="adm-card-title">🖼 Cambiar foto por sección</div>
-          <div class="adm-group">
-            <label class="adm-label">Sección a modificar</label>
-            <select class="adm-select" id="photo-target" onchange="previewCurrentPhoto()">
-              <option value="about">Historia / Nosotros (lateral)</option>
-              <option value="svc-oido">Servicio: Oído tapado</option>
-              <option value="svc-garganta">Servicio: Carraspera / Garganta</option>
-              <option value="svc-vertigo">Servicio: Vértigos</option>
-              <option value="gallery-1">Galería — foto 1</option>
-              <option value="gallery-2">Galería — foto 2</option>
-              <option value="gallery-3">Galería — foto 3</option>
-              <option value="gallery-4">Galería — foto 4</option>
-              <option value="gallery-5">Galería — foto 5</option>
-              <option value="gallery-6">Galería — foto 6</option>
-              <option value="gallery-7">Galería — foto 7</option>
-            </select>
+          <div class="adm-card-title">📸 Subir fotos</div>
+          <div class="upload-area" id="upload-area" onclick="document.getElementById('file-input').click()">
+            <div class="upload-icon">📁</div>
+            <div class="upload-text">Arrastra o haz clic</div>
+            <div class="upload-subtext">JPG, PNG, WEBP • Máx 5MB</div>
           </div>
-          <div class="adm-group">
-            <label class="adm-label">Subir nueva foto</label>
-            <input type="file" accept="image/*" id="photo-upload"
-              style="width:100%;padding:8px;border:1.5px dashed #4EC5D8;border-radius:8px;font-size:13px;cursor:pointer;background:#f8fafc;"
-              onchange="previewNewPhoto(this)"/>
-            <img id="photo-preview" class="adm-img-preview" style="display:none;"/>
-          </div>
-          <button class="adm-btn" onclick="applyPhoto()">📸 Aplicar foto</button>
+          <input type="file" id="file-input" accept="image/*" multiple style="display:none" onchange="handleFileSelect(event)">
         </div>
 
         <div class="adm-card">
-          <div class="adm-card-title">🔄 Foto actual</div>
-          <img id="current-photo-preview" class="adm-img-preview" style="display:block;" src="" alt="Foto actual"/>
-          <p style="font-size:11px;color:#6B7280;margin-top:8px;text-align:center;">Selecciona una sección arriba para ver la foto actual</p>
+          <div class="adm-card-title" style="display:flex; justify-content:space-between;">
+            <span>🖼 Galería</span>
+            <span style="font-size:11px; color:#6B7280; font-weight:400;" id="photo-count">0 fotos</span>
+          </div>
+          <div id="photo-gallery" class="photo-grid">
+            <!-- Fotos dinámicas aquí -->
+          </div>
         </div>
       </div>
 
-      <!-- ── TAB TEXTOS ── -->
+      <!-- ══════════════════════════════════════
+           TAB 5: TEXTOS
+      ══════════════════════════════════════ -->
       <div class="adm-section" id="tab-textos">
         <div class="adm-card">
-          <div class="adm-card-title">🏷 Título principal (hero)</div>
+          <div class="adm-card-title">🏥 Títulos principales</div>
           <div class="adm-group">
-            <label class="adm-label">Línea 1 (texto normal)</label>
-            <input class="adm-input" id="hero-t1" type="text" value="¿Problemas de"/>
+            <label class="adm-label">Nombre del centro</label>
+            <input class="adm-input" id="main-title" type="text" value="OtoServiMedic"/>
           </div>
           <div class="adm-group">
-            <label class="adm-label">Línea 1 (acento turquesa)</label>
-            <input class="adm-input" id="hero-t2" type="text" value="oído, nariz"/>
+            <label class="adm-label">Eslogan</label>
+            <input class="adm-input" id="main-subtitle" type="text" value="Centro de Otorrinolaringología"/>
           </div>
-          <div class="adm-group">
-            <label class="adm-label">Línea 2</label>
-            <input class="adm-input" id="hero-t3" type="text" value="o garganta?"/>
-          </div>
-          <button class="adm-btn" onclick="updateHeroTitle()">Actualizar título</button>
-        </div>
-
-        <div class="adm-card">
-          <div class="adm-card-title">✏ Subtítulo del hero</div>
-          <div class="adm-group">
-            <textarea class="adm-input" id="hero-subtitle" rows="3"
-              style="resize:vertical;">Centro especializado en otorrinolaringología. Contamos con especialistas certificados, equipamiento de última generación y precios accesibles para toda la familia.</textarea>
-          </div>
-          <button class="adm-btn" onclick="updateHeroSubtitle()">Actualizar subtítulo</button>
-        </div>
-
-        <div class="adm-card">
-          <div class="adm-card-title">📢 Botón CTA principal</div>
-          <div class="adm-group">
-            <label class="adm-label">Texto del botón</label>
-            <input class="adm-input" id="cta-text" type="text" value="Agendar cita ahora"/>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Enlace (URL o WhatsApp)</label>
-            <input class="adm-input" id="cta-link" type="text" value="https://wa.me/51930756294"/>
-          </div>
-          <button class="adm-btn" onclick="updateCTA()">Actualizar botón</button>
-        </div>
-
-        <div class="adm-card">
-          <div class="adm-card-title">💬 Agregar testimonio</div>
-          <div class="adm-group">
-            <label class="adm-label">Nombre del paciente</label>
-            <input class="adm-input" id="new-test-name" type="text" placeholder="Ej: Carlos M."/>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Servicio recibido</label>
-            <input class="adm-input" id="new-test-svc" type="text" placeholder="Ej: Audiometría · Lima"/>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Comentario</label>
-            <textarea class="adm-input" id="new-test-text" rows="3" placeholder="Escribe el testimonio del paciente..."></textarea>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Etiqueta (diagnóstico)</label>
-            <input class="adm-input" id="new-test-tag" type="text" placeholder="Ej: Audiología"/>
-          </div>
-          <button class="adm-btn secondary" onclick="addTestimonial()">+ Agregar testimonio</button>
+          <button class="adm-btn" onclick="updateMainTitle()">Actualizar</button>
         </div>
       </div>
 
-      <!-- ── TAB VISIBILIDAD ── -->
-      <div class="adm-section" id="tab-visib">
-        <div class="adm-card">
-          <div class="adm-card-title">👁 Mostrar / Ocultar secciones</div>
-          <div class="adm-toggle-row">
-            <span class="adm-toggle-label">Barra de estadísticas</span>
-            <label class="adm-switch"><input type="checkbox" id="vis-stats" checked onchange="toggleSection('.stats')"/><span class="adm-slider"></span></label>
-          </div>
-          <div class="adm-toggle-row">
-            <span class="adm-toggle-label">Sección "Nuestra historia"</span>
-            <label class="adm-switch"><input type="checkbox" id="vis-about" checked onchange="toggleSection('.about')"/><span class="adm-slider"></span></label>
-          </div>
-          <div class="adm-toggle-row">
-            <span class="adm-toggle-label">Sección Procedimientos</span>
-            <label class="adm-switch"><input type="checkbox" id="vis-procs" checked onchange="toggleSection('.procedures')"/><span class="adm-slider"></span></label>
-          </div>
-          <div class="adm-toggle-row">
-            <span class="adm-toggle-label">Sección Equipo</span>
-            <label class="adm-switch"><input type="checkbox" id="vis-team" checked onchange="toggleSectionById('equipo')"/><span class="adm-slider"></span></label>
-          </div>
-          <div class="adm-toggle-row">
-            <span class="adm-toggle-label">Testimonios de pacientes</span>
-            <label class="adm-switch"><input type="checkbox" id="vis-test" checked onchange="toggleSection('.testimonials')"/><span class="adm-slider"></span></label>
-          </div>
-          <div class="adm-toggle-row">
-            <span class="adm-toggle-label">Galería de fotos</span>
-            <label class="adm-switch"><input type="checkbox" id="vis-gallery" checked onchange="toggleSectionById('galeria')"/><span class="adm-slider"></span></label>
-          </div>
-        </div>
-
-        <div class="adm-card">
-          <div class="adm-card-title">🎨 Color principal</div>
-          <div class="adm-row">
-            <div class="adm-group">
-              <label class="adm-label">Azul marino</label>
-              <input type="color" id="color-navy" value="#2A3A8F" style="width:100%;height:40px;border-radius:8px;border:1.5px solid #e2e8f0;cursor:pointer;padding:3px;" onchange="updateColor('navy', this.value)"/>
-            </div>
-            <div class="adm-group">
-              <label class="adm-label">Turquesa</label>
-              <input type="color" id="color-cyan" value="#4EC5D8" style="width:100%;height:40px;border-radius:8px;border:1.5px solid #e2e8f0;cursor:pointer;padding:3px;" onchange="updateColor('cyan', this.value)"/>
-            </div>
-          </div>
-          <button class="adm-btn secondary" onclick="resetColors()">Restaurar colores originales</button>
-        </div>
-
-        <div class="adm-card">
-          <div class="adm-card-title">💾 Guardar y descargar</div>
-          <p style="font-size:12px;color:#6B7280;margin-bottom:12px;line-height:1.6;">Descarga el HTML actualizado con todos los cambios aplicados para subir a tu servidor o compartir.</p>
-          <button class="adm-btn" onclick="downloadHTML()" style="background:#1D9E75;">⬇ Descargar HTML actualizado</button>
-        </div>
-      </div>
-
-
-      <!-- ── TAB REDES SOCIALES ── -->
+      <!-- ══════════════════════════════════════
+           TAB 6: REDES
+      ══════════════════════════════════════ -->
       <div class="adm-section" id="tab-redes">
-
-        <!-- Facebook -->
         <div class="adm-card">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:8px;background:#1877F2;display:flex;align-items:center;justify-content:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              </div>
-              <div class="adm-card-title" style="margin:0;">Facebook</div>
-            </div>
-            <label class="adm-switch"><input type="checkbox" id="sw-fb" checked onchange="toggleSocial('fb', this.checked)"/><span class="adm-slider"></span></label>
+          <div class="adm-card-title">📱 Redes sociales</div>
+          <div class="adm-group">
+            <label class="adm-label">Facebook</label>
+            <input class="adm-input" id="edit-facebook" type="url" placeholder="facebook.com/tu-pagina"/>
           </div>
           <div class="adm-group">
-            <label class="adm-label">URL de la página</label>
-            <input class="adm-input" id="link-fb" type="text" value="https://www.facebook.com/otoservimedic"/>
+            <label class="adm-label">Instagram</label>
+            <input class="adm-input" id="edit-instagram" type="url" placeholder="instagram.com/tu-cuenta"/>
           </div>
           <div class="adm-group">
-            <label class="adm-label">Nombre / Handle</label>
-            <input class="adm-input" id="handle-fb" type="text" value="@otoservimedic"/>
+            <label class="adm-label">WhatsApp</label>
+            <input class="adm-input" id="edit-whatsapp" type="url" value="https://wa.me/51930756294"/>
           </div>
-          <button class="adm-btn" onclick="updateSocial('fb')">Guardar Facebook</button>
+          <button class="adm-btn" onclick="updateSocialMedia()">Actualizar Redes</button>
         </div>
+      </div>
 
-        <!-- Instagram -->
-        <div class="adm-card">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);display:flex;align-items:center;justify-content:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="white" stroke="none"/></svg>
-              </div>
-              <div class="adm-card-title" style="margin:0;">Instagram</div>
-            </div>
-            <label class="adm-switch"><input type="checkbox" id="sw-ig" checked onchange="toggleSocial('ig', this.checked)"/><span class="adm-slider"></span></label>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">URL del perfil</label>
-            <input class="adm-input" id="link-ig" type="text" value="https://www.instagram.com/otoservimedic"/>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Nombre / Handle</label>
-            <input class="adm-input" id="handle-ig" type="text" value="@otoservimedic"/>
-          </div>
-          <button class="adm-btn" onclick="updateSocial('ig')">Guardar Instagram</button>
-        </div>
-
-        <!-- WhatsApp -->
-        <div class="adm-card">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:8px;background:#25D366;display:flex;align-items:center;justify-content:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-              </div>
-              <div class="adm-card-title" style="margin:0;">WhatsApp</div>
-            </div>
-            <label class="adm-switch"><input type="checkbox" id="sw-wa" checked onchange="toggleSocial('wa', this.checked)"/><span class="adm-slider"></span></label>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Número (con código de país)</label>
-            <input class="adm-input" id="link-wa" type="text" value="51930756294" placeholder="51XXXXXXXXX"/>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Texto visible en botones</label>
-            <input class="adm-input" id="handle-wa" type="text" value="930 756 294"/>
-          </div>
-          <button class="adm-btn" onclick="updateSocial('wa')">Guardar WhatsApp</button>
-        </div>
-
-        <!-- TikTok -->
-        <div class="adm-card">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:8px;background:#010101;display:flex;align-items:center;justify-content:center;">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
-              </div>
-              <div class="adm-card-title" style="margin:0;">TikTok</div>
-            </div>
-            <label class="adm-switch"><input type="checkbox" id="sw-tt" onchange="toggleSocial('tt', this.checked)"/><span class="adm-slider"></span></label>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">URL del perfil</label>
-            <input class="adm-input" id="link-tt" type="text" value="https://www.tiktok.com/@otoservimedic"/>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Handle</label>
-            <input class="adm-input" id="handle-tt" type="text" value="@otoservimedic"/>
-          </div>
-          <button class="adm-btn" onclick="updateSocial('tt')">Guardar TikTok</button>
-        </div>
-
-        <!-- YouTube -->
-        <div class="adm-card">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:8px;background:#FF0000;display:flex;align-items:center;justify-content:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#FF0000"/></svg>
-              </div>
-              <div class="adm-card-title" style="margin:0;">YouTube</div>
-            </div>
-            <label class="adm-switch"><input type="checkbox" id="sw-yt" onchange="toggleSocial('yt', this.checked)"/><span class="adm-slider"></span></label>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">URL del canal</label>
-            <input class="adm-input" id="link-yt" type="text" value="https://www.youtube.com/@otoservimedic"/>
-          </div>
-          <div class="adm-group">
-            <label class="adm-label">Handle</label>
-            <input class="adm-input" id="handle-yt" type="text" value="@otoservimedic"/>
-          </div>
-          <button class="adm-btn" onclick="updateSocial('yt')">Guardar YouTube</button>
-        </div>
-
-      </div><!-- /tab-redes -->
-
-    </div><!-- /adm-content -->
-  </div><!-- /admin-panel -->
-</div><!-- /admin-overlay -->
+    </div>
+  </div>
+</div>
 
 <script>
-// ── Open / Close ────────────────────────────────────────────────
-document.getElementById('admin-toggle').onclick = () => {
-  document.getElementById('admin-overlay').classList.add('open');
-};
-document.getElementById('admin-close').onclick = () => {
-  // Close the panel
-  document.getElementById('admin-overlay').classList.remove('open');
-  // Hide the toggle button completely until next unlock
-  const btn = document.getElementById('admin-toggle');
-  btn.style.cssText = 'display:none !important; opacity:0; pointer-events:none;';
-  adminUnlocked = false;
-  // Show goodbye toast
-  const t = document.getElementById('adm-toast');
-  if(t){ t.textContent = '🔒 Panel cerrado y oculto'; t.style.opacity = '1'; setTimeout(() => t.style.opacity = '0', 2000); }
-};
-document.getElementById('admin-overlay').onclick = (e) => {
-  if (e.target === document.getElementById('admin-overlay'))
-    document.getElementById('admin-overlay').classList.remove('open');
-};
+// ═══════════════════════════════════════════════════
+// PANEL DE ADMINISTRACIÓN - JAVASCRIPT
+// ═══════════════════════════════════════════════════
 
-// ── Tab switching ───────────────────────────────────────────────
+// ── Data Storage ──
+let adminPrices = [];
+let adminPhotos = [];
+let adminDoctors = [];
+
+// Cargar datos
+function loadAdminData() {
+  const savedPrices = localStorage.getItem('admin_prices');
+  const savedPhotos = localStorage.getItem('admin_photos');
+  
+  adminPrices = savedPrices ? JSON.parse(savedPrices) : [
+    { id: 1, label: 'Consulta Otorrino', price: 80, visible: true },
+    { id: 2, label: 'Consulta + Lavado de oídos', price: 120, visible: true }
+  ];
+  
+  adminPhotos = savedPhotos ? JSON.parse(savedPhotos) : [];
+  
+  const savedDoctors = localStorage.getItem('admin_doctors');
+  adminDoctors = savedDoctors ? JSON.parse(savedDoctors) : [
+    {
+      id: 1,
+      name: 'Dra. Gleni Rojas Rafael',
+      specialty: 'Otorrinolaringóloga',
+      cmp: 'CMP 75063',
+      rne: 'RNE 40413',
+      description: 'Médico otorrinolaringóloga colegiada y habilitada. Especialista en diagnóstico y tratamiento de patologías del oído, nariz y garganta, con amplia experiencia en procedimientos en consultorio.',
+      photo: '', // URL de foto o vacío para usar iniciales
+      initials: 'GR'
+    }
+  ];
+}
+
+// Guardar datos
+function saveAdminData() {
+  localStorage.setItem('admin_prices', JSON.stringify(adminPrices));
+  localStorage.setItem('admin_photos', JSON.stringify(adminPhotos));
+  localStorage.setItem('admin_doctors', JSON.stringify(adminDoctors));
+}
+
+// ── Toast notifications ──
+function showToast(message, type = 'success') {
+  const toast = document.getElementById('adm-toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// ── Tab switching ──
 document.querySelectorAll('.adm-tab').forEach(tab => {
-  tab.onclick = () => {
+  tab.addEventListener('click', () => {
     document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.adm-section').forEach(s => s.classList.remove('active'));
     tab.classList.add('active');
-    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
-  };
+    const tabName = tab.getAttribute('data-tab');
+    document.getElementById('tab-' + tabName).classList.add('active');
+  });
 });
 
-// ── Toast ───────────────────────────────────────────────────────
-function toast(msg = '✓ Cambio aplicado') {
-  const t = document.getElementById('adm-toast');
-  t.textContent = msg; t.style.opacity = '1';
-  setTimeout(() => t.style.opacity = '0', 2500);
-}
+// ── Panel open/close ──
+const adminToggle = document.getElementById('admin-toggle');
+const adminOverlay = document.getElementById('admin-overlay');
+const adminClose = document.getElementById('admin-close');
 
-// ── PRECIOS ─────────────────────────────────────────────────────
-function updatePrice(type) {
-  const price = document.getElementById('price-' + type).value;
-  const label = document.getElementById('label-' + type).value;
-  const show  = document.getElementById('show-price-' + type).checked;
+adminToggle.onclick = () => {
+  adminOverlay.classList.add('open');
+};
 
-  // Find all price pill elements matching this service
-  document.querySelectorAll('.svc-price-pill').forEach(pill => {
-    if (pill.textContent.includes(type === 'lavado' ? 'Lavado' : 'Diagnóstico')) {
-      const amt = pill.querySelector('.amount');
-      if (amt) {
-        if (show) {
-          amt.textContent = 's/' + price;
-          amt.style.display = '';
-          pill.style.display = '';
-        } else {
-          pill.style.display = 'none';
-        }
-      }
-      // Update label text (first text node)
-      const txt = pill.childNodes[0];
-      if (txt && txt.nodeType === 3) txt.textContent = label + ' ';
-    }
-  });
+adminClose.onclick = () => {
+  adminOverlay.classList.remove('open');
+};
 
-  // Update hero card price boxes
-  document.querySelectorAll('.pr-num, .price-box .price').forEach(el => {
-    const parent = el.closest('.price-box, .pr-box');
-    if (!parent) return;
-    const lbl = parent.querySelector('.label, .pr-label');
-    if (!lbl) return;
-    if (type === 'lavado' && lbl.textContent.includes('Lavado')) {
-      el.innerHTML = show ? `<sub>s/</sub>${price}` : 'Consultar';
-    } else if (type === 'consulta' && lbl.textContent.includes('Diagnóstico')) {
-      el.innerHTML = show ? `<sub>s/</sub>${price}` : 'Consultar';
-    }
-  });
-
-  // Update stat bar price
-  if (type === 'consulta') {
-    document.getElementById('stat-price').value = 's/' + price;
-    document.querySelectorAll('.stat-n').forEach(el => {
-      if (el.textContent.includes('/')) el.textContent = 's/' + price;
-    });
+adminOverlay.onclick = (e) => {
+  if (e.target === adminOverlay) {
+    adminOverlay.classList.remove('open');
   }
-  toast('💰 Precio actualizado: S/' + price);
-}
+};
 
-function addNewService() {
-  const name  = document.getElementById('new-svc-name').value.trim();
-  const price = document.getElementById('new-svc-price').value;
-  const cat   = document.getElementById('new-svc-cat').value;
-  if (!name || !price) { toast('⚠ Completa nombre y precio'); return; }
-
-  const icons = { 'Oído':'👂', 'Nariz':'👃', 'Garganta':'🗣', 'Procedimiento':'🩺' };
-  const card = document.createElement('div');
-  card.className = 'svc-card';
-  card.style.cssText = 'background:white;border-radius:18px;overflow:hidden;border:1px solid rgba(42,58,143,0.07);';
-  card.innerHTML = `
-    <div class="svc-top">
-      <div class="svc-icon" style="width:40px;height:40px;background:#4EC5D8;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:20px;">${icons[cat]||'🩺'}</div>
-      <div class="svc-title">${name}</div>
+// ═══════════════════════════════════════════════════
+// PRECIOS
+// ═══════════════════════════════════════════════════
+function renderPrices() {
+  const container = document.getElementById('prices-container');
+  
+  if (adminPrices.length === 0) {
+    container.innerHTML = `
+      <div style="text-align:center; padding:20px; color:#6B7280;">
+        <div style="font-size:32px; margin-bottom:8px;">💰</div>
+        <div style="font-size:12px;">No hay precios configurados</div>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = adminPrices.map(price => `
+    <div class="price-item">
+      <div class="price-header">
+        <div class="price-title">
+          <input type="text" value="${price.label}"
+                 onchange="updatePriceLabel(${price.id}, this.value)"
+                 placeholder="Nombre del servicio"/>
+        </div>
+        <div class="price-actions">
+          <button class="btn-icon-small danger" onclick="deletePrice(${price.id})" title="Eliminar">🗑</button>
+        </div>
+      </div>
+      <div class="price-fields">
+        <div class="adm-group" style="margin:0;">
+          <label class="adm-label">Precio (S/)</label>
+          <div class="price-value">
+            <input type="number" value="${price.price}" min="0"
+                   onchange="updatePriceValue(${price.id}, this.value)"/>
+          </div>
+        </div>
+        <div class="adm-group" style="margin:0;">
+          <label class="adm-label">Mostrar</label>
+          <label class="adm-switch" style="margin-top:4px;">
+            <input type="checkbox" ${price.visible ? 'checked' : ''}
+                   onchange="togglePriceVisibility(${price.id}, this.checked)"/>
+            <span class="adm-slider"></span>
+          </label>
+        </div>
+      </div>
     </div>
-    <div class="svc-body" style="padding:14px 16px;">
-      <div class="svc-price-pill" style="display:inline-flex;align-items:center;gap:6px;background:#2A3A8F;color:white;border-radius:30px;padding:8px 14px;font-size:12px;margin-top:8px;">
-        ${name} <span class="amount" style="font-size:18px;font-weight:900;color:#4EC5D8;font-family:'Montserrat',sans-serif;">s/${price}</span>
-      </div>
-      <div style="margin-top:10px;">
-        <span style="background:#E3F6FA;color:#2A3A8F;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;font-family:'Montserrat',sans-serif;">${cat}</span>
-      </div>
-    </div>`;
-  document.querySelector('.services-grid').appendChild(card);
-  document.getElementById('new-svc-name').value = '';
-  document.getElementById('new-svc-price').value = '';
-  toast('✅ Servicio agregado: ' + name);
+  `).join('');
 }
 
-// ── INFO ────────────────────────────────────────────────────────
-function updateContactInfo() {
-  const phone   = document.getElementById('edit-phone').value;
-  const address = document.getElementById('edit-address').value;
-  const city    = document.getElementById('edit-city').value;
-  const fb      = document.getElementById('edit-fb').value;
-
-  // Phone: update all occurrences
-  document.querySelectorAll('.nav-cta').forEach(el => el.textContent = '📞 ' + phone);
-  document.querySelectorAll('.info-val2.phone').forEach(el => el.textContent = phone);
-  document.querySelectorAll('.info-value.phone').forEach(el => el.textContent = phone);
-
-  // WhatsApp links
-  const waNum = phone.replace(/\D/g,'');
-  document.querySelectorAll('a[href*="wa.me"]').forEach(a => a.href = 'https://wa.me/51' + waNum);
-  document.querySelectorAll('.whatsapp-btn').forEach(el => {
-    if (el.tagName === 'A') el.href = 'https://wa.me/51' + waNum;
-    el.childNodes.forEach(n => { if(n.nodeType===3 && n.textContent.includes('WhatsApp')) n.textContent = ' Escribir por WhatsApp · ' + phone; });
+function addNewPrice() {
+  const newId = Date.now();
+  adminPrices.push({
+    id: newId,
+    label: 'Nuevo servicio',
+    price: 0,
+    visible: true
   });
-  toast('📞 Contacto actualizado');
+  saveAdminData();
+  renderPrices();
+  showToast('✓ Precio agregado');
 }
 
-function updateDoctorInfo() {
-  const name = document.getElementById('edit-drname').value;
-  const cred = document.getElementById('edit-drcred').value;
-  document.querySelectorAll('.doctor-info .name').forEach(el => el.textContent = name);
-  document.querySelectorAll('.doctor-info .cred').forEach(el => el.textContent = cred);
-  document.querySelectorAll('.dr-name').forEach(el => el.textContent = name);
-  document.querySelectorAll('.dr-cred').forEach(el => el.textContent = cred);
-  toast('🩺 Especialista actualizada');
+function updatePriceLabel(id, newLabel) {
+  const price = adminPrices.find(p => p.id === id);
+  if (price) {
+    price.label = newLabel;
+    saveAdminData();
+    showToast('✓ Nombre actualizado');
+  }
+}
+
+function updatePriceValue(id, newValue) {
+  const price = adminPrices.find(p => p.id === id);
+  if (price) {
+    price.price = parseFloat(newValue) || 0;
+    saveAdminData();
+    showToast('✓ Precio actualizado');
+  }
+}
+
+function togglePriceVisibility(id, visible) {
+  const price = adminPrices.find(p => p.id === id);
+  if (price) {
+    price.visible = visible;
+    saveAdminData();
+    showToast(visible ? '✓ Precio visible' : '✓ Precio oculto');
+  }
+}
+
+function deletePrice(id) {
+  if (!confirm('¿Eliminar este precio?')) return;
+  adminPrices = adminPrices.filter(p => p.id !== id);
+  saveAdminData();
+  renderPrices();
+  showToast('✓ Precio eliminado');
+}
+
+// ═══════════════════════════════════════════════════
+// FOTOS
+// ═══════════════════════════════════════════════════
+function renderPhotos() {
+  const gallery = document.getElementById('photo-gallery');
+  const photoCount = document.getElementById('photo-count');
+  
+  photoCount.textContent = `${adminPhotos.length} foto${adminPhotos.length !== 1 ? 's' : ''}`;
+  
+  if (adminPhotos.length === 0) {
+    gallery.innerHTML = `
+      <div style="grid-column:1/-1; text-align:center; padding:20px; color:#6B7280;">
+        <div style="font-size:32px; margin-bottom:8px;">🖼</div>
+        <div style="font-size:12px;">No hay fotos</div>
+      </div>
+    `;
+    return;
+  }
+  
+  gallery.innerHTML = adminPhotos.map((photo, index) => `
+    <div class="photo-item" draggable="true" data-index="${index}">
+      <div class="photo-order">${index + 1}</div>
+      <img src="${photo.url}" alt="${photo.name}" class="photo-img"
+           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e2e8f0%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%236B7280%22 font-size=%2214%22%3E✕%3C/text%3E%3C/svg%3E'"/>
+      <div class="photo-overlay">
+        <button onclick="deletePhoto(${index})">🗑 Eliminar</button>
+      </div>
+    </div>
+  `).join('');
+  
+  initDragAndDrop();
+}
+
+function handleFileSelect(event) {
+  const files = event.target.files;
+  processFiles(files);
+  event.target.value = '';
+}
+
+function processFiles(files) {
+  Array.from(files).forEach(file => {
+    if (!file.type.startsWith('image/')) {
+      showToast('⚠ Solo imágenes', 'error');
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      showToast('⚠ Máx 5MB', 'error');
+      return;
+    }
+    
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      adminPhotos.push({
+        id: Date.now() + Math.random(),
+        name: file.name,
+        url: e.target.result,
+        uploadedAt: new Date().toISOString()
+      });
+      saveAdminData();
+      renderPhotos();
+      showToast('✓ Foto agregada');
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function deletePhoto(index) {
+  if (!confirm('¿Eliminar esta foto?')) return;
+  adminPhotos.splice(index, 1);
+  saveAdminData();
+  renderPhotos();
+  showToast('✓ Foto eliminada');
+}
+
+// Drag & Drop para reordenar
+let draggedIndex = null;
+
+function initDragAndDrop() {
+  const photoItems = document.querySelectorAll('.photo-item');
+  
+  photoItems.forEach((item, index) => {
+    item.addEventListener('dragstart', () => {
+      draggedIndex = index;
+      item.classList.add('dragging');
+    });
+    
+    item.addEventListener('dragend', () => {
+      item.classList.remove('dragging');
+    });
+    
+    item.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    });
+    
+    item.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const dropIndex = parseInt(item.getAttribute('data-index'));
+      
+      if (draggedIndex !== null && draggedIndex !== dropIndex) {
+        const draggedPhoto = adminPhotos[draggedIndex];
+        adminPhotos.splice(draggedIndex, 1);
+        adminPhotos.splice(dropIndex, 0, draggedPhoto);
+        
+        saveAdminData();
+        renderPhotos();
+        showToast('✓ Fotos reordenadas');
+      }
+      draggedIndex = null;
+    });
+  });
+}
+
+// Drag & Drop en área de carga
+const uploadArea = document.getElementById('upload-area');
+
+uploadArea.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  uploadArea.classList.add('dragover');
+});
+
+uploadArea.addEventListener('dragleave', () => {
+  uploadArea.classList.remove('dragover');
+});
+
+uploadArea.addEventListener('drop', (e) => {
+  e.preventDefault();
+  uploadArea.classList.remove('dragover');
+  const files = e.dataTransfer.files;
+  processFiles(files);
+});
+
+// ═══════════════════════════════════════════════════
+// INFORMACIÓN
+// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════
+// EQUIPO MÉDICO
+// ═══════════════════════════════════════════════════
+function renderDoctors() {
+  const container = document.getElementById('doctors-container');
+  
+  if (adminDoctors.length === 0) {
+    container.innerHTML = `
+      <div style="text-align:center; padding:20px; color:#6B7280;">
+        <div style="font-size:32px; margin-bottom:8px;">👨‍⚕️</div>
+        <div style="font-size:12px;">No hay doctores agregados</div>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = adminDoctors.map(doctor => `
+    <div class="price-item" style="padding:14px;">
+      <div style="margin-bottom:12px;">
+        <div style="width:100%; aspect-ratio:4/3; border-radius:12px; background:#2A3A8F; color:white; display:flex; align-items:center; justify-content:center; font-size:48px; font-weight:700; margin-bottom:12px; ${doctor.photo ? 'background-image:url(' + doctor.photo + '); background-size:cover; background-position:center;' : ''}">
+          ${doctor.photo ? '' : doctor.initials}
+        </div>
+        <div class="adm-group" style="margin-bottom:8px;">
+          <label class="adm-label">Nombre completo</label>
+          <input type="text" class="adm-input" value="${doctor.name}"
+                 onchange="updateDoctorField(${doctor.id}, 'name', this.value)" style="padding:6px 10px; font-size:13px;"/>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div class="adm-group" style="margin:0;">
+            <label class="adm-label">Especialidad</label>
+            <input type="text" class="adm-input" value="${doctor.specialty}"
+                   onchange="updateDoctorField(${doctor.id}, 'specialty', this.value)" style="padding:6px 10px; font-size:13px;"/>
+          </div>
+          <div class="adm-group" style="margin:0;">
+            <label class="adm-label">Iniciales</label>
+            <input type="text" class="adm-input" value="${doctor.initials}" maxlength="3"
+                   onchange="updateDoctorField(${doctor.id}, 'initials', this.value)" style="padding:6px 10px; font-size:13px; text-transform:uppercase;"/>
+          </div>
+        </div>
+      </div>
+      
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+        <div class="adm-group" style="margin:0;">
+          <label class="adm-label">CMP</label>
+          <input type="text" class="adm-input" value="${doctor.cmp}"
+                 onchange="updateDoctorField(${doctor.id}, 'cmp', this.value)" style="padding:6px 10px; font-size:13px;"/>
+        </div>
+        <div class="adm-group" style="margin:0;">
+          <label class="adm-label">RNE</label>
+          <input type="text" class="adm-input" value="${doctor.rne}"
+                 onchange="updateDoctorField(${doctor.id}, 'rne', this.value)" style="padding:6px 10px; font-size:13px;"/>
+        </div>
+      </div>
+      
+      <div class="adm-group" style="margin-bottom:10px;">
+        <label class="adm-label">Foto del doctor</label>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <button class="adm-btn secondary" onclick="document.getElementById('doctor-photo-${doctor.id}').click()" style="font-size:11px; padding:8px; margin:0;">📁 Subir foto</button>
+          <button class="adm-btn secondary" onclick="removeDoctorPhoto(${doctor.id})" style="font-size:11px; padding:8px; margin:0;">🗑 Quitar foto</button>
+        </div>
+        <input type="file" id="doctor-photo-${doctor.id}" accept="image/*" style="display:none" onchange="uploadDoctorPhoto(${doctor.id}, event)"/>
+        <input type="url" class="adm-input" value="${doctor.photo}"
+               onchange="updateDoctorField(${doctor.id}, 'photo', this.value)" 
+               placeholder="O pega URL: https://ejemplo.com/foto.jpg" style="padding:6px 10px; font-size:11px; margin-top:8px;"/>
+      </div>
+      
+      <div class="adm-group" style="margin-bottom:10px;">
+        <label class="adm-label">Descripción</label>
+        <textarea class="adm-input" rows="3"
+                  onchange="updateDoctorField(${doctor.id}, 'description', this.value)" style="padding:8px 10px; font-size:12px; resize:vertical;">${doctor.description}</textarea>
+      </div>
+      
+      <button class="adm-btn danger" onclick="deleteDoctor(${doctor.id})" style="font-size:12px; padding:8px;">🗑 Eliminar Doctor</button>
+    </div>
+  `).join('');
+  
+  // Actualizar el sitio web
+  updateDoctorsOnSite();
+}
+
+function addDoctor() {
+  const newId = Date.now();
+  adminDoctors.push({
+    id: newId,
+    name: 'Nuevo Doctor',
+    specialty: 'Especialidad',
+    cmp: 'CMP 00000',
+    rne: 'RNE 00000',
+    description: 'Descripción del doctor...',
+    photo: '',
+    initials: 'ND'
+  });
+  saveAdminData();
+  renderDoctors();
+  showToast('✓ Doctor agregado');
+}
+
+function updateDoctorField(id, field, value) {
+  const doctor = adminDoctors.find(d => d.id === id);
+  if (doctor) {
+    doctor[field] = value;
+    saveAdminData();
+    renderDoctors();
+    showToast('✓ Actualizado');
+  }
+}
+
+function deleteDoctor(id) {
+  if (!confirm('¿Eliminar este doctor del equipo?')) return;
+  adminDoctors = adminDoctors.filter(d => d.id !== id);
+  saveAdminData();
+  renderDoctors();
+  showToast('✓ Doctor eliminado');
+}
+
+function uploadDoctorPhoto(doctorId, event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  
+  if (!file.type.startsWith('image/')) {
+    showToast('⚠ Solo se permiten imágenes', 'error');
+    return;
+  }
+  
+  if (file.size > 5 * 1024 * 1024) {
+    showToast('⚠ La imagen es muy grande (máx 5MB)', 'error');
+    return;
+  }
+  
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const doctor = adminDoctors.find(d => d.id === doctorId);
+    if (doctor) {
+      doctor.photo = e.target.result;
+      saveAdminData();
+      renderDoctors();
+      showToast('✓ Foto actualizada');
+    }
+  };
+  reader.readAsDataURL(file);
+  
+  // Limpiar input
+  event.target.value = '';
+}
+
+function removeDoctorPhoto(doctorId) {
+  const doctor = adminDoctors.find(d => d.id === doctorId);
+  if (doctor) {
+    doctor.photo = '';
+    saveAdminData();
+    renderDoctors();
+    showToast('✓ Foto eliminada');
+  }
+}
+
+function updateDoctorsOnSite() {
+  const teamGrid = document.querySelector('.team-grid');
+  if (!teamGrid) return;
+  
+  // Limpiar grid actual
+  teamGrid.innerHTML = '';
+  
+  // Agregar doctores
+  adminDoctors.forEach(doctor => {
+    const doctorCard = document.createElement('div');
+    doctorCard.className = 'team-card';
+    doctorCard.innerHTML = `
+      <div class="team-card-top">
+        <div class="team-avatar" ${doctor.photo ? 'style="background-image:url(' + doctor.photo + '); background-size:cover; background-position:center; font-size:0;"' : ''}>${doctor.photo ? '' : doctor.initials}</div>
+        <div class="team-card-info">
+          <h3>${doctor.name}</h3>
+          <div class="role">${doctor.specialty}</div>
+          <div class="team-badges">
+            <span class="team-badge">${doctor.cmp}</span>
+            <span class="team-badge">${doctor.rne}</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card-body">
+        <p>${doctor.description}</p>
+      </div>
+    `;
+    teamGrid.appendChild(doctorCard);
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// INFORMACIÓN
+// ═══════════════════════════════════════════════════
+function updateContactInfo() {
+  const phone = document.getElementById('edit-phone').value;
+  const address = document.getElementById('edit-address').value;
+  const city = document.getElementById('edit-city').value;
+  const email = document.getElementById('edit-email').value;
+  
+  localStorage.setItem('contact_info', JSON.stringify({ phone, address, city, email }));
+  showToast('✓ Contacto actualizado');
+}
+
+function updateSchedule() {
+  const weekday = document.getElementById('edit-schedule-weekday').value;
+  const sat = document.getElementById('edit-schedule-sat').value;
+  const sun = document.getElementById('edit-schedule-sun').value;
+  
+  localStorage.setItem('schedule', JSON.stringify({ weekday, sat, sun }));
+  showToast('✓ Horarios actualizados');
+}
+
+function updateMainTitle() {
+  const title = document.getElementById('main-title').value;
+  const subtitle = document.getElementById('main-subtitle').value;
+  
+  localStorage.setItem('main_titles', JSON.stringify({ title, subtitle }));
+  showToast('✓ Títulos actualizados');
+}
+
+function updateSocialMedia() {
+  const facebook = document.getElementById('edit-facebook').value;
+  const instagram = document.getElementById('edit-instagram').value;
+  const whatsapp = document.getElementById('edit-whatsapp').value;
+  
+  localStorage.setItem('social_media', JSON.stringify({ facebook, instagram, whatsapp }));
+  showToast('✓ Redes actualizadas');
 }
 
 function updateStats() {
-  const vals = ['patients','price','procs','cert'];
-  const stats = document.querySelectorAll('.stat-num, .stat-n');
-  let i = 0;
-  stats.forEach(el => {
-    const v = document.getElementById('stat-' + vals[i])?.value;
-    if (v) el.innerHTML = v;
-    i++;
-  });
-  toast('⭐ Estadísticas actualizadas');
+  const pacientes = document.getElementById('stat-pacientes').value;
+  const precio = document.getElementById('stat-precio').value;
+  const procedimientos = document.getElementById('stat-procedimientos').value;
+  const certificacion = document.getElementById('stat-certificacion').value;
+  
+  // Actualizar en el DOM del sitio web
+  const statCells = document.querySelectorAll('.stat-cell .num');
+  if (statCells.length >= 4) {
+    statCells[0].textContent = pacientes;
+    statCells[1].textContent = precio;
+    statCells[2].textContent = procedimientos;
+    statCells[3].textContent = certificacion;
+  }
+  
+  // Guardar en localStorage
+  localStorage.setItem('statistics', JSON.stringify({ pacientes, precio, procedimientos, certificacion }));
+  showToast('✓ Estadísticas actualizadas');
 }
 
-// ── FOTOS ────────────────────────────────────────────────────────
-const photoMap = {
-  'about':       () => document.querySelector('.about-main-img img'),
-  'svc-oido':    () => document.querySelector('.svc-card img[alt="Revisión de oído"]'),
-  'svc-garganta':() => document.querySelector('.svc-card img[alt="Examen de garganta"]'),
-  'svc-vertigo': () => document.querySelector('.svc-card img[alt="Examen clínico"]'),
-  'gallery-1':   () => document.querySelectorAll('#galeria img')[0],
-  'gallery-2':   () => document.querySelectorAll('#galeria img')[1],
-  'gallery-3':   () => document.querySelectorAll('#galeria img')[2],
-  'gallery-4':   () => document.querySelectorAll('#galeria img')[3],
-  'gallery-5':   () => document.querySelectorAll('#galeria img')[4],
-  'gallery-6':   () => document.querySelectorAll('#galeria img')[5],
-  'gallery-7':   () => document.querySelectorAll('#galeria img')[6],
-};
-
-function previewCurrentPhoto() {
-  const key = document.getElementById('photo-target').value;
-  const img = photoMap[key]?.();
-  const preview = document.getElementById('current-photo-preview');
-  if (img) { preview.src = img.src; preview.style.display = 'block'; }
-}
-
-function previewNewPhoto(input) {
-  const file = input.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    const p = document.getElementById('photo-preview');
-    p.src = e.target.result; p.style.display = 'block';
-  };
-  reader.readAsDataURL(file);
-}
-
-function applyPhoto() {
-  const key   = document.getElementById('photo-target').value;
-  const input = document.getElementById('photo-upload');
-  const file  = input.files[0];
-  if (!file) { toast('⚠ Selecciona una foto primero'); return; }
-  const reader = new FileReader();
-  reader.onload = e => {
-    const img = photoMap[key]?.();
-    if (img) {
-      img.src = e.target.result;
-      document.getElementById('current-photo-preview').src = e.target.result;
-      toast('🖼 Foto actualizada correctamente');
-    } else {
-      toast('⚠ No se encontró la imagen destino');
+// ═══════════════════════════════════════════════════
+// INICIALIZACIÓN
+// ═══════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  loadAdminData();
+  renderPrices();
+  renderDoctors();
+  renderPhotos();
+  
+  // Cargar información guardada
+  const savedContact = localStorage.getItem('contact_info');
+  if (savedContact) {
+    const contact = JSON.parse(savedContact);
+    document.getElementById('edit-phone').value = contact.phone || '';
+    document.getElementById('edit-address').value = contact.address || '';
+    document.getElementById('edit-city').value = contact.city || '';
+    document.getElementById('edit-email').value = contact.email || '';
+  }
+  
+  const savedSchedule = localStorage.getItem('schedule');
+  if (savedSchedule) {
+    const schedule = JSON.parse(savedSchedule);
+    document.getElementById('edit-schedule-weekday').value = schedule.weekday || '';
+    document.getElementById('edit-schedule-sat').value = schedule.sat || '';
+    document.getElementById('edit-schedule-sun').value = schedule.sun || '';
+  }
+  
+  const savedTitles = localStorage.getItem('main_titles');
+  if (savedTitles) {
+    const titles = JSON.parse(savedTitles);
+    document.getElementById('main-title').value = titles.title || '';
+    document.getElementById('main-subtitle').value = titles.subtitle || '';
+  }
+  
+  const savedSocial = localStorage.getItem('social_media');
+  if (savedSocial) {
+    const social = JSON.parse(savedSocial);
+    document.getElementById('edit-facebook').value = social.facebook || '';
+    document.getElementById('edit-instagram').value = social.instagram || '';
+    document.getElementById('edit-whatsapp').value = social.whatsapp || '';
+  }
+  
+  // Cargar y aplicar estadísticas guardadas
+  const savedStats = localStorage.getItem('statistics');
+  if (savedStats) {
+    const stats = JSON.parse(savedStats);
+    
+    // Actualizar inputs del panel
+    document.getElementById('stat-pacientes').value = stats.pacientes || '+5K';
+    document.getElementById('stat-precio').value = stats.precio || 's/75';
+    document.getElementById('stat-procedimientos').value = stats.procedimientos || '+10';
+    document.getElementById('stat-certificacion').value = stats.certificacion || '100%';
+    
+    // Actualizar estadísticas en el sitio web
+    const statCells = document.querySelectorAll('.stat-cell .num');
+    if (statCells.length >= 4) {
+      statCells[0].textContent = stats.pacientes;
+      statCells[1].textContent = stats.precio;
+      statCells[2].textContent = stats.procedimientos;
+      statCells[3].textContent = stats.certificacion;
     }
-  };
-  reader.readAsDataURL(file);
-}
-
-// ── TEXTOS ───────────────────────────────────────────────────────
-function updateHeroTitle() {
-  const t1 = document.getElementById('hero-t1').value;
-  const t2 = document.getElementById('hero-t2').value;
-  const t3 = document.getElementById('hero-t3').value;
-  const h1 = document.querySelector('.hero h1');
-  if (h1) h1.innerHTML = `${t1} <span class="accent">${t2}</span><br>${t3}`;
-  toast('✏ Título actualizado');
-}
-
-function updateHeroSubtitle() {
-  const txt = document.getElementById('hero-subtitle').value;
-  const el = document.querySelector('.hero-subtitle');
-  if (el) el.textContent = txt;
-  toast('✏ Subtítulo actualizado');
-}
-
-function updateCTA() {
-  const text = document.getElementById('cta-text').value;
-  const link = document.getElementById('cta-link').value;
-  document.querySelectorAll('.btn-cta').forEach(el => {
-    el.textContent = text; el.href = link;
-  });
-  toast('🔗 Botón CTA actualizado');
-}
-
-function addTestimonial() {
-  const name = document.getElementById('new-test-name').value.trim();
-  const svc  = document.getElementById('new-test-svc').value.trim();
-  const text = document.getElementById('new-test-text').value.trim();
-  const tag  = document.getElementById('new-test-tag').value.trim();
-  if (!name || !text) { toast('⚠ Completa nombre y comentario'); return; }
-
-  const initials = name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-  const card = document.createElement('div');
-  card.className = 'test-card';
-  card.innerHTML = `
-    <div class="stars">★★★★★</div>
-    <blockquote style="font-size:14px;color:#374151;line-height:1.7;margin-bottom:16px;font-style:italic;">"${text}"</blockquote>
-    <div class="test-author">
-      <div class="test-avatar">${initials}</div>
-      <div>
-        <div class="test-name">${name}</div>
-        <div class="test-service">${svc}</div>
-        ${tag ? `<span class="test-highlight">${tag}</span>` : ''}
-      </div>
-    </div>`;
-  document.querySelector('.test-grid').appendChild(card);
-  ['new-test-name','new-test-svc','new-test-text','new-test-tag'].forEach(id => document.getElementById(id).value = '');
-  toast('💬 Testimonio agregado');
-}
-
-// ── VISIBILIDAD ──────────────────────────────────────────────────
-function toggleSection(selector) {
-  document.querySelectorAll(selector).forEach(el => {
-    el.style.display = el.style.display === 'none' ? '' : 'none';
-  });
-  toast('👁 Visibilidad actualizada');
-}
-
-function toggleSectionById(id) {
-  const el = document.getElementById(id);
-  if (el) el.style.display = el.style.display === 'none' ? '' : 'none';
-  toast('👁 Sección ' + (document.getElementById(id)?.style.display === 'none' ? 'ocultada' : 'visible'));
-}
-
-// ── COLORES ──────────────────────────────────────────────────────
-function updateColor(key, value) {
-  const varName = key === 'navy' ? '--navy' : '--cyan';
-  document.documentElement.style.setProperty(varName, value);
-
-  // Also update hardcoded colors in inline styles
-  if (key === 'navy') {
-    document.querySelectorAll('[style*="#2A3A8F"]').forEach(el => {
-      el.style.cssText = el.style.cssText.replace(/#2A3A8F/gi, value);
-    });
-  } else {
-    document.querySelectorAll('[style*="#4EC5D8"]').forEach(el => {
-      el.style.cssText = el.style.cssText.replace(/#4EC5D8/gi, value);
-    });
-  }
-  toast('🎨 Color actualizado');
-}
-
-function resetColors() {
-  document.documentElement.style.setProperty('--navy', '#2A3A8F');
-  document.documentElement.style.setProperty('--cyan', '#4EC5D8');
-  document.getElementById('color-navy').value = '#2A3A8F';
-  document.getElementById('color-cyan').value = '#4EC5D8';
-  toast('🎨 Colores restaurados');
-}
-
-// ── DESCARGAR HTML ───────────────────────────────────────────────
-function downloadHTML() {
-  // Clone the entire document
-  const clone = document.documentElement.cloneNode(true);
-
-  // Remove the admin panel from the download
-  const adminParts = ['admin-toggle','admin-overlay','adm-toast'];
-  adminParts.forEach(id => {
-    const el = clone.querySelector('#' + id);
-    if (el) el.remove();
-  });
-
-  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-  const blob = new Blob([html], { type: 'text/html' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'otoservimedic-actualizado.html';
-  a.click();
-  toast('⬇ Descargando HTML actualizado...');
-}
-
-
-// ── REDES SOCIALES ──────────────────────────────────────────────
-const socialIds = {
-  fb: {
-    navIds: ['nav-fb'],
-    footerIds: ['footer-fb-link'],
-    galleryIds: ['gallery-fb'],
-    contactIds: ['contact-fb'],
-    handleIds: ['footer-fb-handle'],
-  },
-  ig: {
-    navIds: ['nav-ig'],
-    footerIds: ['footer-ig-link'],
-    galleryIds: ['gallery-ig'],
-    contactIds: ['contact-ig'],
-    handleIds: ['footer-ig-handle'],
-  },
-  tt: {
-    navIds: ['nav-tt'],
-    footerIds: ['footer-tt-link'],
-    galleryIds: ['gallery-tt'],
-    contactIds: ['contact-tt'],
-    handleIds: ['footer-tt-handle'],
-  },
-  yt: {
-    navIds: ['nav-yt'],
-    footerIds: ['footer-yt-link'],
-    galleryIds: ['gallery-yt'],
-    contactIds: ['contact-yt'],
-    handleIds: ['footer-yt-handle'],
-  },
-  wa: {
-    navIds: [],
-    footerIds: ['footer-wa-link'],
-    galleryIds: [],
-    contactIds: [],
-    handleIds: ['footer-wa-num'],
-  },
-};
-
-function getAllSocialEls(key) {
-  const s = socialIds[key];
-  const all = [...s.navIds, ...s.footerIds, ...s.galleryIds, ...s.contactIds];
-  return all.map(id => document.getElementById(id)).filter(Boolean);
-}
-
-function toggleSocial(key, show) {
-  getAllSocialEls(key).forEach(el => {
-    el.style.display = show ? 'flex' : 'none';
-  });
-  toast(show ? `✅ ${key.toUpperCase()} activado` : `❌ ${key.toUpperCase()} ocultado`);
-}
-
-function updateSocial(key) {
-  const link   = document.getElementById('link-' + key)?.value || '';
-  const handle = document.getElementById('handle-' + key)?.value || '';
-
-  if (key === 'wa') {
-    // WhatsApp: build wa.me link
-    const num = link.replace(/\D/g, '');
-    const waUrl = 'https://wa.me/' + num;
-    document.querySelectorAll('a[href*="wa.me"]').forEach(a => a.href = waUrl);
-    // Update button texts
-    document.querySelectorAll('.whatsapp-btn').forEach(el => {
-      if (el.tagName === 'A') el.href = waUrl;
-    });
-    // Nav CTA
-    const navCta = document.getElementById('nav-cta-wa');
-    if (navCta) { navCta.href = waUrl; navCta.textContent = '📞 ' + handle; }
-    // Footer handle
-    const fwh = document.getElementById('footer-wa-num');
-    if (fwh) fwh.textContent = handle;
-    toast('📱 WhatsApp actualizado');
-    return;
-  }
-
-  // Update href on all elements
-  getAllSocialEls(key).forEach(el => { if (el.href !== undefined) el.href = link; });
-
-  // Update handle text
-  const s = socialIds[key];
-  s.handleIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = handle;
-  });
-
-  // Update gallery button text too
-  s.galleryIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      const platform = { fb:'Facebook', ig:'Instagram', tt:'TikTok', yt:'YouTube' }[key];
-      el.childNodes.forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) n.textContent = ` ${platform} · ${handle}`; });
-    }
-  });
-
-  toast(`✅ ${key.toUpperCase()} actualizado: ${handle}`);
-}
-
-// ── ACCESO SECRETO AL PANEL CON CONTRASEÑA ──────────────────
-let adminUnlocked = false;
-
-// Password modal styles
-const pmStyle = document.createElement('style');
-pmStyle.textContent = `
-  #pw-modal-bg {
-    display:none; position:fixed; inset:0; z-index:99997;
-    background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);
-    align-items:center; justify-content:center;
-  }
-  #pw-modal-bg.open { display:flex; }
-  #pw-modal {
-    background:white; border-radius:20px; padding:32px 28px;
-    width:320px; box-shadow:0 20px 60px rgba(0,0,0,0.3);
-    font-family:'Poppins',sans-serif; text-align:center;
-  }
-  #pw-modal h3 { font-size:18px; font-weight:700; color:#1B2B6B; margin-bottom:6px; }
-  #pw-modal p  { font-size:13px; color:#64748B; margin-bottom:20px; }
-  #pw-input {
-    width:100%; padding:12px 16px; border:2px solid #E8EDF5;
-    border-radius:10px; font-size:16px; text-align:center;
-    letter-spacing:3px; outline:none; font-family:'Poppins',sans-serif;
-    transition:border-color .2s;
-  }
-  #pw-input:focus { border-color:#00BCD4; }
-  #pw-input.error { border-color:#ef4444; animation:shake .3s; }
-  #pw-btn {
-    width:100%; margin-top:12px; background:#1B2B6B; color:white;
-    border:none; border-radius:10px; padding:12px;
-    font-family:'Poppins',sans-serif; font-size:14px; font-weight:700;
-    cursor:pointer; transition:background .2s;
-  }
-  #pw-btn:hover { background:#00BCD4; color:#1B2B6B; }
-  #pw-cancel { font-size:12px; color:#64748B; margin-top:10px; cursor:pointer; display:block; }
-  #pw-cancel:hover { color:#1B2B6B; }
-  #pw-error { font-size:12px; color:#ef4444; margin-top:8px; display:none; }
-  @keyframes shake {
-    0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)}
-  }
-`;
-document.head.appendChild(pmStyle);
-
-// Create password modal
-const pmBg = document.createElement('div');
-pmBg.id = 'pw-modal-bg';
-pmBg.innerHTML = `
-  <div id="pw-modal">
-    <div style="font-size:36px;margin-bottom:10px;">🔐</div>
-    <h3>Acceso Administrador</h3>
-    <p>Ingresa la contraseña para acceder al panel de OtoServiMedic</p>
-    <input type="password" id="pw-input" placeholder="••••••••" maxlength="20"/>
-    <div id="pw-error">Contraseña incorrecta. Intenta de nuevo.</div>
-    <button id="pw-btn" onclick="checkPassword()">Ingresar</button>
-    <span id="pw-cancel" onclick="closePwModal()">Cancelar</span>
-  </div>
-`;
-document.body.appendChild(pmBg);
-
-// Allow Enter key in password field
-document.addEventListener('keydown', (e) => {
-  if (document.getElementById('pw-modal-bg').classList.contains('open')) {
-    if (e.key === 'Enter') checkPassword();
-    if (e.key === 'Escape') closePwModal();
   }
 });
 
-function openPwModal() {
-  document.getElementById('pw-modal-bg').classList.add('open');
-  document.getElementById('pw-input').value = '';
-  document.getElementById('pw-error').style.display = 'none';
-  document.getElementById('pw-input').classList.remove('error');
-  setTimeout(() => document.getElementById('pw-input').focus(), 100);
-}
 
-function closePwModal() {
-  document.getElementById('pw-modal-bg').classList.remove('open');
-}
+// ═══════════════════════════════════════════════════
+// SISTEMA DE AUTENTICACIÓN DEL PANEL
+// ═══════════════════════════════════════════════════
+const ADMIN_PASSWORD = 'OtoServiMedic2026';
+let isAuthenticated = false;
 
-function checkPassword() {
-  // ══ CAMBIA ESTA CONTRASEÑA POR LA QUE QUIERAS ══
-  const ADMIN_PASSWORD = 'OtoServiMedic2026';
-  // ════════════════════════════════════════════════
-  const input = document.getElementById('pw-input').value;
-  if (input === ADMIN_PASSWORD) {
-    closePwModal();
-    unlockAdmin();
+// Función para solicitar contraseña
+function requestAdminPassword() {
+  const password = prompt('🔐 Ingresa la contraseña del panel de administración:');
+  
+  if (password === null) {
+    // Usuario canceló
+    return false;
+  }
+  
+  if (password === ADMIN_PASSWORD) {
+    isAuthenticated = true;
+    showToast('✓ Acceso concedido');
+    return true;
   } else {
-    const inp = document.getElementById('pw-input');
-    inp.classList.add('error');
-    document.getElementById('pw-error').style.display = 'block';
-    inp.value = '';
-    setTimeout(() => inp.classList.remove('error'), 400);
+    showToast('⚠ Contraseña incorrecta', 'error');
+    return false;
   }
 }
 
-function unlockAdmin() {
-  const btn = document.getElementById('admin-toggle');
-  btn.style.cssText = 'display:flex !important; opacity:1; pointer-events:all; position:fixed; bottom:28px; right:28px; z-index:9999; width:52px; height:52px; border-radius:50%; background:#1B2B6B; color:white; border:3px solid #00BCD4; font-size:22px; cursor:pointer; box-shadow:0 4px 20px rgba(27,43,107,0.4); align-items:center; justify-content:center;';
-  adminUnlocked = true;
-  const t = document.getElementById('adm-toast');
-  if(t){ t.textContent = '🔓 Panel desbloqueado'; t.style.opacity = '1'; setTimeout(() => t.style.opacity = '0', 2500); }
-  // Auto-open panel
-  document.getElementById('admin-overlay').classList.add('open');
-}
+// Panel open/close con autenticación
+adminToggle.onclick = () => {
+  if (!isAuthenticated) {
+    if (requestAdminPassword()) {
+      adminOverlay.classList.add('open');
+    }
+  } else {
+    adminOverlay.classList.add('open');
+  }
+};
 
-// Método 1: Ctrl + Shift + A → pide contraseña
+adminClose.onclick = () => {
+  adminOverlay.classList.remove('open');
+};
+
+adminOverlay.onclick = (e) => {
+  if (e.target === adminOverlay) {
+    adminOverlay.classList.remove('open');
+  }
+};
+
+// Activar panel con Ctrl+Shift+A (con autenticación)
 document.addEventListener('keydown', (e) => {
   if (e.ctrlKey && e.shiftKey && e.key === 'A') {
-    if (!adminUnlocked) openPwModal();
-    else {
-      // Already unlocked - toggle panel
-      const overlay = document.getElementById('admin-overlay');
-      overlay.classList.toggle('open');
+    e.preventDefault();
+    if (!adminToggle.classList.contains('visible')) {
+      adminToggle.classList.add('visible');
+      showToast('✓ Panel activado - Haz clic en ⚙ para entrar');
     }
   }
 });
 
-// Método 2: 5 clics en el footer → pide contraseña
-let footerClicks = 0, footerTimer = null;
-document.addEventListener('DOMContentLoaded', () => {
-  const footer = document.querySelector('footer');
-  if (footer) {
-    footer.addEventListener('click', () => {
-      footerClicks++;
-      clearTimeout(footerTimer);
-      footerTimer = setTimeout(() => { footerClicks = 0; }, 1500);
-      if (footerClicks >= 5) {
-        footerClicks = 0;
-        if (!adminUnlocked) openPwModal();
+// Activar panel con 3 clics en el footer (con autenticación)
+let footerClicksAuth = 0;
+let footerClickTimerAuth;
+document.addEventListener('click', (e) => {
+  if (e.target.closest('footer')) {
+    footerClicksAuth++;
+    clearTimeout(footerClickTimerAuth);
+    
+    if (footerClicksAuth === 3) {
+      if (!adminToggle.classList.contains('visible')) {
+        adminToggle.classList.add('visible');
+        showToast('✓ Panel activado - Haz clic en ⚙ para entrar');
       }
-    });
-  }
-});
-
-// Init photo preview on load
-window.addEventListener('load', () => {
-  setTimeout(previewCurrentPhoto, 500);
-});
-</script>
-
-<script>
-async function enviarFormulario() {
-  const nombre  = document.getElementById('cf-nombre').value.trim();
-  const email   = document.getElementById('cf-email').value.trim();
-  const telefono= document.getElementById('cf-telefono').value.trim();
-  const motivo  = document.getElementById('cf-motivo').value;
-  const mensaje = document.getElementById('cf-mensaje').value.trim();
-  const status  = document.getElementById('cf-status');
-  const btn     = document.getElementById('cf-btn');
-
-  if (!nombre || !email) {
-    status.style.display = 'block';
-    status.style.background = '#fff3f3';
-    status.style.color = '#c0392b';
-    status.style.border = '1px solid #f5c6cb';
-    status.textContent = 'Por favor completa al menos tu nombre y correo electrónico.';
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Enviando...';
-  status.style.display = 'none';
-
-  try {
-    const res = await fetch('https://formspree.io/f/mjgjppbb', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ nombre, email, telefono, motivo, mensaje })
-    });
-
-    if (res.ok) {
-      status.style.display = 'block';
-      status.style.background = '#f0faf4';
-      status.style.color = '#1a7a4a';
-      status.style.border = '1px solid #a3d9b1';
-      status.textContent = '✅ ¡Mensaje enviado! Nos comunicaremos contigo muy pronto.';
-      btn.textContent = 'Mensaje enviado ✓';
-      document.getElementById('cf-nombre').value = '';
-      document.getElementById('cf-email').value = '';
-      document.getElementById('cf-telefono').value = '';
-      document.getElementById('cf-motivo').value = '';
-      document.getElementById('cf-mensaje').value = '';
-    } else {
-      throw new Error('Error en el servidor');
+      footerClicksAuth = 0;
     }
-  } catch(e) {
-    status.style.display = 'block';
-    status.style.background = '#fff3f3';
-    status.style.color = '#c0392b';
-    status.style.border = '1px solid #f5c6cb';
-    status.textContent = '❌ Ocurrió un error al enviar. Inténtalo de nuevo o escríbenos por WhatsApp.';
-    btn.disabled = false;
-    btn.textContent = 'Enviar solicitud de cita';
+    
+    footerClickTimerAuth = setTimeout(() => { footerClicksAuth = 0; }, 1000);
   }
-}
+});
 </script>
-
 </body>
 </html>
