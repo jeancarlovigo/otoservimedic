@@ -1,2 +1,0 @@
-# otoservimedic
-Landing page OtoServimedic
