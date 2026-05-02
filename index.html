@@ -1434,6 +1434,7 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
       <button class="adm-tab" data-tab="procedimientos">🏥 PROCED.</button>
       <button class="adm-tab" data-tab="info">📋 INFO</button>
       <button class="adm-tab" data-tab="fotos">🖼 FOTOS</button>
+      <button class="adm-tab" data-tab="slides">🎬 SLIDES</button>
       <button class="adm-tab" data-tab="textos">✏ TEXTOS</button>
       <button class="adm-tab" data-tab="redes">📱 REDES</button>
     </div>
@@ -1627,22 +1628,38 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
       ══════════════════════════════════════ -->
       <div class="adm-section" id="tab-fotos">
         <div class="adm-card">
-          <div class="adm-card-title">📸 Subir fotos</div>
-          <div class="upload-area" id="upload-area" onclick="document.getElementById('file-input').click()">
-            <div class="upload-icon">📁</div>
-            <div class="upload-text">Arrastra o haz clic</div>
-            <div class="upload-subtext">JPG, PNG, WEBP • Máx 5MB</div>
+          <div class="adm-card-title">📷 Gestión de Fotos de Procedimientos</div>
+          <p style="font-size:13px;color:#6B7280;margin-bottom:20px;">Sube y administra las fotos que se mostrarán en cada procedimiento</p>
+          
+          <!-- Formulario para subir nueva foto -->
+          <div style="background:#F3F4F6;padding:20px;border-radius:12px;margin-bottom:24px;">
+            <h3 style="font-size:16px;margin-bottom:16px;color:#1B2B6B;">Subir Nueva Foto</h3>
+            <div style="display:grid;gap:12px;">
+              <div>
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;">Nombre del procedimiento</label>
+                <input id="photo-proc-name" type="text" placeholder="Ej: AUDIOMETRÍA" 
+                       style="width:100%;padding:10px 14px;border:1px solid #E5E7EB;border-radius:8px;font-size:14px;">
+                <small style="color:#6B7280;font-size:12px;margin-top:4px;display:block;">Debe coincidir exactamente con el nombre en PROCEDIMIENTOS</small>
+              </div>
+              <div>
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;">Archivo de imagen</label>
+                <input id="photo-file" type="file" accept="image/*" onchange="previewPhotoUpload()"
+                       style="width:100%;padding:10px 14px;border:1px solid #E5E7EB;border-radius:8px;font-size:14px;">
+              </div>
+              <div id="photo-upload-preview" style="display:none;margin-top:12px;">
+                <img id="photo-upload-preview-img" alt="Vista previa" style="max-width:300px;max-height:300px;border-radius:8px;border:2px solid #E5E7EB;">
+              </div>
+              <button onclick="uploadProcedurePhoto()" 
+                      style="background:#1B2B6B;color:white;padding:12px 24px;border:none;border-radius:8px;font-weight:600;cursor:pointer;margin-top:8px;transition:background 0.3s;">
+                📤 Subir Foto
+              </button>
+            </div>
           </div>
-          <input type="file" id="file-input" accept="image/*" multiple style="display:none" onchange="handleFileSelect(event)">
-        </div>
 
-        <div class="adm-card">
-          <div class="adm-card-title" style="display:flex; justify-content:space-between;">
-            <span>🖼 Galería</span>
-            <span style="font-size:11px; color:#6B7280; font-weight:400;" id="photo-count">0 fotos</span>
-          </div>
-          <div id="photo-gallery" class="photo-grid">
-            <!-- Fotos dinámicas aquí -->
+          <!-- Lista de fotos existentes -->
+          <div>
+            <h3 style="font-size:16px;margin-bottom:16px;color:#1B2B6B;">Fotos Existentes</h3>
+            <div id="procedure-photos-list" style="display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));"></div>
           </div>
         </div>
       </div>
@@ -1688,7 +1705,25 @@ setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
       </div>
 
     </div>
-  </div>
+  
+      <!-- ══════════════════════════════════════
+           TAB 7: SLIDES HERO
+      ══════════════════════════════════════ -->
+      <div class="adm-section" id="tab-slides">
+        <div class="adm-card">
+          <div class="adm-card-title">🎬 Gestión de Slides del Hero</div>
+          <p style="font-size:13px;color:#6B7280;margin-bottom:20px;">Administra las imágenes y textos del carrusel principal (Hero)</p>
+          
+          <button onclick="addNewHeroSlide()" 
+                  style="background:#00BCD4;color:white;padding:12px 24px;border:none;border-radius:8px;font-weight:600;cursor:pointer;margin-bottom:24px;transition:all 0.3s;">
+            ➕ Agregar Nuevo Slide
+          </button>
+          
+          <div id="hero-slides-list" style="display:grid;gap:20px;"></div>
+        </div>
+      </div>
+
+    </div>
 </div>
 
 <script>
@@ -2273,6 +2308,9 @@ document.addEventListener('DOMContentLoaded', () => {
   renderPrices();
   renderDoctors();
   renderPhotos();
+  renderProcedurePhotosList();
+  renderHeroSlidesList();
+  updateHeroSlidesInPage();
   
   // Cargar información guardada
   const savedContact = localStorage.getItem('contact_info');
@@ -2423,6 +2461,380 @@ document.addEventListener('click', (e) => {
     footerClickTimerAuth = setTimeout(() => { footerClicksAuth = 0; }, 1000);
   }
 });
+
+
+// ══════════════════════════════════════════════════
+// GESTIÓN DE FOTOS DE PROCEDIMIENTOS
+// ══════════════════════════════════════════════════
+
+function previewPhotoUpload() {
+  const file = document.getElementById('photo-file').files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('photo-upload-preview-img').src = e.target.result;
+      document.getElementById('photo-upload-preview').style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+function uploadProcedurePhoto() {
+  const procName = document.getElementById('photo-proc-name').value.trim();
+  const fileInput = document.getElementById('photo-file');
+  
+  if (!procName) {
+    showToast('⚠ Ingresa el nombre del procedimiento', 'error');
+    return;
+  }
+  
+  if (!fileInput.files || !fileInput.files[0]) {
+    showToast('⚠ Selecciona una imagen', 'error');
+    return;
+  }
+  
+  const file = fileInput.files[0];
+  
+  // Validar tamaño (max 5MB)
+  if (file.size > 5 * 1024 * 1024) {
+    showToast('⚠ La imagen es muy grande (máx 5MB)', 'error');
+    return;
+  }
+  
+  const reader = new FileReader();
+  
+  reader.onload = function(e) {
+    const imageData = e.target.result;
+    
+    // Guardar en localStorage
+    let photos = JSON.parse(localStorage.getItem('procedure_photos') || '[]');
+    
+    // Verificar si ya existe
+    const existingIndex = photos.findIndex(p => p.name.toUpperCase() === procName.toUpperCase());
+    
+    if (existingIndex >= 0) {
+      // Reemplazar existente
+      photos[existingIndex] = { name: procName, image: imageData };
+      showToast('✓ Foto actualizada');
+    } else {
+      // Agregar nueva
+      photos.push({ name: procName, image: imageData });
+      showToast('✓ Foto subida correctamente');
+    }
+    
+    localStorage.setItem('procedure_photos', JSON.stringify(photos));
+    
+    // Limpiar formulario
+    document.getElementById('photo-proc-name').value = '';
+    document.getElementById('photo-file').value = '';
+    document.getElementById('photo-upload-preview').style.display = 'none';
+    
+    // Actualizar lista
+    renderProcedurePhotosList();
+  };
+  
+  reader.onerror = function() {
+    showToast('⚠ Error al leer la imagen', 'error');
+  };
+  
+  reader.readAsDataURL(file);
+}
+
+function renderProcedurePhotosList() {
+  const photos = JSON.parse(localStorage.getItem('procedure_photos') || '[]');
+  const container = document.getElementById('procedure-photos-list');
+  
+  if (!container) return;
+  
+  if (photos.length === 0) {
+    container.innerHTML = '<p style="color:#6B7280;font-size:14px;text-align:center;padding:40px;">No hay fotos subidas aún</p>';
+    return;
+  }
+  
+  container.innerHTML = photos.map((photo, index) => `
+    <div style="background:white;border:1px solid #E5E7EB;border-radius:12px;padding:16px;position:relative;">
+      <img src="${photo.image}" alt="${photo.name}" 
+           style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:12px;">
+      <div style="font-weight:600;font-size:14px;color:#1B2B6B;margin-bottom:8px;">${photo.name}</div>
+      <div style="display:flex;gap:8px;">
+        <button onclick="editProcedurePhotoName(${index})" 
+                style="flex:1;background:#2563C6;color:white;border:none;padding:8px;border-radius:6px;font-size:13px;cursor:pointer;transition:background 0.2s;">
+          ✏️ Renombrar
+        </button>
+        <button onclick="deleteProcedurePhoto(${index})" 
+                style="flex:1;background:#ef4444;color:white;border:none;padding:8px;border-radius:6px;font-size:13px;cursor:pointer;transition:background 0.2s;">
+          🗑️ Eliminar
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function editProcedurePhotoName(index) {
+  const photos = JSON.parse(localStorage.getItem('procedure_photos') || '[]');
+  const newName = prompt('Nuevo nombre del procedimiento:', photos[index].name);
+  
+  if (newName && newName.trim()) {
+    photos[index].name = newName.trim();
+    localStorage.setItem('procedure_photos', JSON.stringify(photos));
+    showToast('✓ Nombre actualizado');
+    renderProcedurePhotosList();
+  }
+}
+
+function deleteProcedurePhoto(index) {
+  if (!confirm('¿Eliminar esta foto?')) return;
+  
+  const photos = JSON.parse(localStorage.getItem('procedure_photos') || '[]');
+  photos.splice(index, 1);
+  localStorage.setItem('procedure_photos', JSON.stringify(photos));
+  showToast('✓ Foto eliminada');
+  renderProcedurePhotosList();
+}
+
+// ══════════════════════════════════════════════════
+// GESTIÓN DE SLIDES DEL HERO
+// ══════════════════════════════════════════════════
+
+function addNewHeroSlide() {
+  const slides = JSON.parse(localStorage.getItem('hero_slides') || '[]');
+  
+  const newSlide = {
+    id: Date.now(),
+    eyebrow: 'CENTRO ORL · PUEBLO LIBRE, LIMA',
+    title: '¿Problemas de oído, nariz o garganta?',
+    subtitle: 'Centro especializado en otorrinolaringología. Diagnóstico preciso y atención para toda la familia.',
+    price1: 75,
+    price1Label: 'Consulta + Diagnóstico',
+    price2: 89,
+    price2Label: 'Consulta + Lavado oído',
+    image: '',
+    active: true
+  };
+  
+  slides.push(newSlide);
+  localStorage.setItem('hero_slides', JSON.stringify(slides));
+  showToast('✓ Slide creado');
+  renderHeroSlidesList();
+}
+
+function renderHeroSlidesList() {
+  const slides = JSON.parse(localStorage.getItem('hero_slides') || '[]');
+  const container = document.getElementById('hero-slides-list');
+  
+  if (!container) return;
+  
+  if (slides.length === 0) {
+    container.innerHTML = '<p style="color:#6B7280;text-align:center;padding:40px;">No hay slides personalizados. Los slides por defecto se mostrarán automáticamente.</p>';
+    return;
+  }
+  
+  container.innerHTML = slides.map((slide, index) => `
+    <div style="background:white;border:2px solid ${slide.active ? '#00BCD4' : '#E5E7EB'};border-radius:12px;padding:20px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h3 style="font-size:16px;color:#1B2B6B;">Slide ${index + 1}</h3>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;">
+            <input type="checkbox" ${slide.active ? 'checked' : ''} 
+                   onchange="toggleHeroSlide(${slide.id})" 
+                   style="width:16px;height:16px;cursor:pointer;">
+            <span style="color:#6B7280;">Activo</span>
+          </label>
+          <button onclick="deleteHeroSlide(${slide.id})" 
+                  style="background:#ef4444;color:white;border:none;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;">
+            🗑️
+          </button>
+        </div>
+      </div>
+      
+      <div style="display:grid;gap:12px;">
+        <!-- Imagen -->
+        <div>
+          <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:#374151;">Imagen del slide</label>
+          ${slide.image ? `
+            <img src="${slide.image}" style="width:100%;max-height:200px;object-fit:cover;border-radius:8px;margin-bottom:8px;">
+          ` : '<div style="background:#F3F4F6;padding:40px;text-align:center;border-radius:8px;color:#9CA3AF;margin-bottom:8px;">Sin imagen</div>'}
+          <input type="file" accept="image/*" onchange="uploadHeroSlideImage(${slide.id}, this)" 
+                 style="width:100%;padding:8px;border:1px solid #E5E7EB;border-radius:6px;font-size:13px;">
+        </div>
+        
+        <!-- Eyebrow -->
+        <div>
+          <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:#374151;">Eyebrow (texto pequeño arriba)</label>
+          <input type="text" value="${slide.eyebrow}" 
+                 onchange="updateHeroSlideField(${slide.id}, 'eyebrow', this.value)"
+                 style="width:100%;padding:8px 12px;border:1px solid #E5E7EB;border-radius:6px;font-size:13px;">
+        </div>
+        
+        <!-- Título -->
+        <div>
+          <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:#374151;">Título principal</label>
+          <input type="text" value="${slide.title}" 
+                 onchange="updateHeroSlideField(${slide.id}, 'title', this.value)"
+                 style="width:100%;padding:8px 12px;border:1px solid #E5E7EB;border-radius:6px;font-size:13px;">
+        </div>
+        
+        <!-- Subtítulo -->
+        <div>
+          <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:#374151;">Descripción</label>
+          <textarea onchange="updateHeroSlideField(${slide.id}, 'subtitle', this.value)" 
+                    style="width:100%;padding:8px 12px;border:1px solid #E5E7EB;border-radius:6px;font-size:13px;min-height:60px;resize:vertical;">${slide.subtitle}</textarea>
+        </div>
+        
+        <!-- Precios -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:#F9FAFB;padding:12px;border-radius:8px;">
+            <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:#6B7280;">PRECIO 1</label>
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+              <span style="font-weight:600;">s/</span>
+              <input type="number" value="${slide.price1}" 
+                     onchange="updateHeroSlideField(${slide.id}, 'price1', this.value)"
+                     style="flex:1;padding:6px 10px;border:1px solid #E5E7EB;border-radius:6px;font-size:16px;font-weight:700;">
+            </div>
+            <input type="text" value="${slide.price1Label}" placeholder="Descripción" 
+                   onchange="updateHeroSlideField(${slide.id}, 'price1Label', this.value)"
+                   style="width:100%;padding:6px 10px;border:1px solid #E5E7EB;border-radius:6px;font-size:12px;">
+          </div>
+          <div style="background:#F9FAFB;padding:12px;border-radius:8px;">
+            <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:#6B7280;">PRECIO 2</label>
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+              <span style="font-weight:600;">s/</span>
+              <input type="number" value="${slide.price2}" 
+                     onchange="updateHeroSlideField(${slide.id}, 'price2', this.value)"
+                     style="flex:1;padding:6px 10px;border:1px solid #E5E7EB;border-radius:6px;font-size:16px;font-weight:700;">
+            </div>
+            <input type="text" value="${slide.price2Label}" placeholder="Descripción" 
+                   onchange="updateHeroSlideField(${slide.id}, 'price2Label', this.value)"
+                   style="width:100%;padding:6px 10px;border:1px solid #E5E7EB;border-radius:6px;font-size:12px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function uploadHeroSlideImage(slideId, input) {
+  if (!input.files || !input.files[0]) return;
+  
+  const file = input.files[0];
+  
+  // Validar tamaño
+  if (file.size > 5 * 1024 * 1024) {
+    showToast('⚠ La imagen es muy grande (máx 5MB)', 'error');
+    return;
+  }
+  
+  const reader = new FileReader();
+  
+  reader.onload = function(e) {
+    const slides = JSON.parse(localStorage.getItem('hero_slides') || '[]');
+    const slide = slides.find(s => s.id === slideId);
+    
+    if (slide) {
+      slide.image = e.target.result;
+      localStorage.setItem('hero_slides', JSON.stringify(slides));
+      showToast('✓ Imagen subida');
+      renderHeroSlidesList();
+      updateHeroSlidesInPage();
+    }
+  };
+  
+  reader.readAsDataURL(file);
+}
+
+function updateHeroSlideField(slideId, field, value) {
+  const slides = JSON.parse(localStorage.getItem('hero_slides') || '[]');
+  const slide = slides.find(s => s.id === slideId);
+  
+  if (slide) {
+    slide[field] = value;
+    localStorage.setItem('hero_slides', JSON.stringify(slides));
+    showToast('✓ Actualizado');
+    updateHeroSlidesInPage();
+  }
+}
+
+function toggleHeroSlide(slideId) {
+  const slides = JSON.parse(localStorage.getItem('hero_slides') || '[]');
+  const slide = slides.find(s => s.id === slideId);
+  
+  if (slide) {
+    slide.active = !slide.active;
+    localStorage.setItem('hero_slides', JSON.stringify(slides));
+    showToast(slide.active ? '✓ Slide activado' : '⚠ Slide desactivado');
+    renderHeroSlidesList();
+    updateHeroSlidesInPage();
+  }
+}
+
+function deleteHeroSlide(slideId) {
+  if (!confirm('¿Eliminar este slide?')) return;
+  
+  let slides = JSON.parse(localStorage.getItem('hero_slides') || '[]');
+  slides = slides.filter(s => s.id !== slideId);
+  localStorage.setItem('hero_slides', JSON.stringify(slides));
+  showToast('✓ Slide eliminado');
+  renderHeroSlidesList();
+  updateHeroSlidesInPage();
+}
+
+function updateHeroSlidesInPage() {
+  const slides = JSON.parse(localStorage.getItem('hero_slides') || '[]');
+  const activeSlides = slides.filter(s => s.active);
+  
+  if (activeSlides.length === 0) {
+    // Mantener slides por defecto
+    return;
+  }
+  
+  const heroContainer = document.querySelector('.hero-slides');
+  if (!heroContainer) return;
+  
+  // Recrear slides en el hero
+  heroContainer.innerHTML = activeSlides.map((slide, index) => `
+    <div class="hero-slide ${index === 0 ? 'active' : ''}">
+      <div class="hero-slide-content">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          ${slide.eyebrow}
+        </div>
+        <div class="hero-price-badge">
+          <div><div class="price-tag"><sub>s/</sub>${slide.price1}</div></div>
+          <div class="price-info">${slide.price1Label.replace(/
+/g, '<br>')}</div>
+          <div style="width:1px;background:var(--border);height:32px;margin:0 4px;"></div>
+          <div><div class="price-tag"><sub>s/</sub>${slide.price2}</div></div>
+          <div class="price-info">${slide.price2Label.replace(/
+/g, '<br>')}</div>
+        </div>
+        <h1>${slide.title}</h1>
+        <p class="hero-desc">${slide.subtitle}</p>
+        <div class="hero-ctas">
+          <a href="https://wa.me/51930756294?text=¡Hola%2C%20quisiera%20atenderme%20en%20OtoServiMedic!%20Me%20brinda%20más%20información" class="btn-primary">Reservar cita ahora</a>
+          <a href="#servicios" class="btn-secondary">Ver servicios</a>
+        </div>
+      </div>
+      <div class="hero-slide-img">
+        <img src="${slide.image || 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop'}" alt="${slide.title}">
+      </div>
+    </div>
+  `).join('');
+  
+  // Recrear dots
+  const dotsContainer = document.querySelector('.hero-dots');
+  if (dotsContainer) {
+    dotsContainer.innerHTML = activeSlides.map((_, index) => 
+      `<button class="hero-dot ${index === 0 ? 'active' : ''}" onclick="goSlide(${index})"></button>`
+    ).join('');
+  }
+  
+  // Reiniciar el slider
+  if (typeof initHeroSlider === 'function') {
+    initHeroSlider();
+  }
+}
+
+
 </script>
 </body>
 </html>
